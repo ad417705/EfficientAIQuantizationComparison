@@ -1,0 +1,10 @@
+# Model files — too big for GitHub (it rejects files over 100MB)
+*.gguf
+*.bin
+*.safetensors
+# llama.cpp lives separately — never commit it
+llama.cpp/
+# junk
+__pycache__/
+*.pyc
+.DS_Store

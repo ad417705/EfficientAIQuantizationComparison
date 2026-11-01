@@ -1,0 +1,67 @@
+    1  sudo -i
+    2  nano arithmetic2.s
+    3  as -o arithmetic2.o arithmetic2.s
+    4  nano arithmetic2.s
+    5  as -o arithmetic2.o arithmetic2.s
+    6  nano arithmetic2.s
+    7  as -o arithmetic2.o arithmetic2.s
+    8  ld -o arithmetic2 arithmetic2.o
+    9  ./arithmetic2
+   10  as -g -o arithmetic2.o rithmetic2.s
+   11  as -g -o arithmetic2.o arithmetic2.s
+   12  ld -o arithmetic2 arithmetic2.o
+   13  gdb arithmetic2
+   14  nano arithmetic2.s
+   15  nano spmd2.c
+   16  gcc spmd2.c -o spmd2 -fopenmp
+   17  ./spmd2 4
+   18  ./spmd2 1
+   19  ./spmd2 2
+   20  ./spmd2 3
+   21  ./spmd2 4
+   22  nano spmd2.c
+   23  gcc spmd2.c -o spmd2 -fopenmp
+   24  ./spmd2 4
+   25  nano spmd2.c
+   26  nano third.s
+   27  nano fourth.s
+   28  nano fourth2.s
+   29  nano fourth.s
+   30  nano fourth2.s
+   31  nano fourth.s
+   32  as -g -o fourth.o fourth.s
+   33  nano fourth.s
+   34  as -g -o fourth.o fourth.s
+   35  ld -o fourth fourth.o
+   36  gdb fourth
+   37  nano fourth.s
+   38  as -g -o fourth.o fourth.s
+   39  ld -o fourth fourth.o
+   40  gdb fourth
+   41  nano
+   42  nano fourth.s
+   43  as -g -o fourth.o fourth.s
+   44  ld -o fourth fourth.o
+   45  gdb fourth
+   46  nano fourth.s
+   47  as -g -o fourth.o fourth.s
+   48  ld -o fourth fourth.o
+   49  gdb fourth
+   50  nano fourth.s
+   51  as -g -o fourth.o fourth.s
+   52  ld -o fourth fourth.o
+   53  gdb fourth
+   54  nano fourth.s
+   55  as -g -o fourth.o fourth.s
+   56  ld -o fourth fourth.o
+   57  gdb fourth
+   58  nano fourth.s
+   59  gcc --version | head -1; cmake --version | head -1; python3 --version; git --version; echo "--- net ---"; ping -c3 google.com >/dev/null 2>&1 && echo "internet OK" || echo "NO internet"
+   60  sudo apt update && sudo apt install -y build-essential
+   61  make --version; g++ --version
+   62  cd ~
+   63  git clone --depth 1 --branch b3600 https://github.com/ggerganov/llama.cpp
+   64  cd llama.cpp
+   65  make -j2
+   66  ls
+   67  history > ~/setup-log.txt
