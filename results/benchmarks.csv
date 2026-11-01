@@ -1,3 +1,7 @@
 model,quant,params,size_mib,device,os,threads,n_batch,test,tokens_per_sec,std,date,notes
 Qwen2.5-0.5B-Instruct,Q4_K_M,630.17M,511.65,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,2.02,0.02,2026-11-01,first run
 Qwen2.5-0.5B-Instruct,Q4_K_M,630.17M,511.65,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,1.44,0.00,2026-11-01,first run
+Qwen2.5-0.5B-Instruct,Q8_0,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,4.00,0.01,2026-11-01,baseline
+Qwen2.5-0.5B-Instruct,Q8_0,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,2.38,0.01,2026-11-01,baseline
+Qwen2.5-0.5B-Instruct,Q4_0,630.17M,468.89,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,4.00,0.01,2026-11-01,
+Qwen2.5-0.5B-Instruct,Q4_0,630.17M,468.89,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,2.48,0.00,2026-11-01,
