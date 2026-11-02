@@ -5,7 +5,7 @@ latency, throughput, memory, and energy on edge hardware.
 
 ## Hardware
 - Raspberry Pi 3 (1GB RAM, 32-bit Raspbian Buster) — this repo
-- Android phone — partner
+- Android Pixel 7 — Hung Nguyen
 
 ## Runtime
 - llama.cpp (GGUF models)
