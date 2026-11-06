@@ -39,7 +39,7 @@ Models: SmolLM2-135M-Instruct, SmolLM2-360M-Instruct, Qwen2.5-0.5B-Instruct
 pkg install -y git && git clone -b Android https://github.com/ad417705/EfficientAIQuantizationComparison
 cd EfficientAIQuantizationComparison
 bash scripts/android/00_setup_termux.sh      # build llama.cpp b3600 (~10 min)
-bash scripts/android/01_get_models.sh        # 12 GGUF files into ./models (~3.3 GB)
+bash scripts/android/01_get_models.sh        # 12 GGUF files into ./models (~5 GB)
 termux-wake-lock                             # keep the CPU awake with the screen off
 
 # 1. pilot: checks the whole pipeline in a few minutes
