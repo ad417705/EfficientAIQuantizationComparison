@@ -1,0 +1,16 @@
+1794093050 start qwen2.5-0.5b-instruct-fp16-kvf16-fa0-t4
+1794093672 end qwen2.5-0.5b-instruct-fp16-kvf16-fa0-t4
+1794093702 start qwen2.5-0.5b-instruct-fp16-kvf16-fa1-t4
+1794094506 end qwen2.5-0.5b-instruct-fp16-kvf16-fa1-t4
+1794094536 start qwen2.5-0.5b-instruct-fp16-kvq8_0-fa1-t4
+1794095335 end qwen2.5-0.5b-instruct-fp16-kvq8_0-fa1-t4
+1794095366 start qwen2.5-0.5b-instruct-fp16-kvq4_0-fa1-t4
+1794096198 end qwen2.5-0.5b-instruct-fp16-kvq4_0-fa1-t4
+1794096228 start qwen2.5-0.5b-instruct-q8_0-kvf16-fa0-t4
+1794096805 end qwen2.5-0.5b-instruct-q8_0-kvf16-fa0-t4
+1794096835 start qwen2.5-0.5b-instruct-q8_0-kvf16-fa1-t4
+1794097503 end qwen2.5-0.5b-instruct-q8_0-kvf16-fa1-t4
+1794097533 start qwen2.5-0.5b-instruct-q8_0-kvq8_0-fa1-t4
+1794098162 end qwen2.5-0.5b-instruct-q8_0-kvq8_0-fa1-t4
+1794098192 start qwen2.5-0.5b-instruct-q8_0-kvq4_0-fa1-t4
+1794098827 end qwen2.5-0.5b-instruct-q8_0-kvq4_0-fa1-t4

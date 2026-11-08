@@ -48,6 +48,7 @@ mkdir -p "$OUT"
 PIN=(); command -v taskset >/dev/null && [ -n "$CORES" ] && PIN=(taskset -c "$CORES")
 
 bash scripts/android/syslog.sh "$OUT/syslog.csv" & LOGPID=$!
+[ -x "$BENCH" ] || { echo "llama-bench not found at $BENCH. Run scripts/android/00_setup_termux.sh first (inside Termux on the phone)."; exit 1; }
 trap 'kill $LOGPID 2>/dev/null || true' EXIT
 sleep 10   # idle baseline for the power log
 
@@ -66,8 +67,8 @@ for m in $MODELS; do
           echo "== [$n] $tag   $(date +%T)"
           pg_args=(); for x in $PG; do pg_args+=(-pg "$x"); done
           echo "$(date +%s) start $tag" >> "$OUT/events.log"
-          "${PIN[@]}" "$BENCH" -m "$f" -t "$t" -b "$BATCH" -ngl 0 -fa "$fa" -ctk "$kv" -ctv "$kv" \
-            -p "$PP" -n "$TG" "${pg_args[@]}" -r "$REPS" -o csv \
+          ${PIN[@]+"${PIN[@]}"} "$BENCH" -m "$f" -t "$t" -b "$BATCH" -ngl 0 -fa "$fa" -ctk "$kv" -ctv "$kv" \
+            -p "$PP" -n "$TG" ${pg_args[@]+"${pg_args[@]}"} -r "$REPS" -o csv \
             > "$OUT/$tag.csv" 2> "$OUT/$tag.log" || echo "   FAILED (see $OUT/$tag.log)"
           echo "$(date +%s) end $tag" >> "$OUT/events.log"
           sleep "$COOLDOWN"

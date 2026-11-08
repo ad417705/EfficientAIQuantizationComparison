@@ -1,0 +1,7 @@
+model,quant,runtime,device,n_prompts,ttft_ms_mean,ttft_ms_std,decode_tok_s_mean,decode_tok_s_std,avg_output_tokens,gpu_busy_share_decode,capture,session
+SmolLM2-135M-Instruct,FP16 (q0f16),MLC LLM (OpenCL GPU),Pixel 7,100,2279,729,17.6,1.11,78,0.3,option2_20261106220903,1
+SmolLM2-135M-Instruct,INT4 (q4f16_1),MLC LLM (OpenCL GPU),Pixel 7,100,1555,553,18.2,0.62,108,0.33,option2_20261106220903,2
+SmolLM2-360M-Instruct,FP16 (q0f16),MLC LLM (OpenCL GPU),Pixel 7,100,7620,2955,12.47,0.56,53,0.25,option2_20261106220903,3
+SmolLM2-360M-Instruct,INT4 (q4f16_1),MLC LLM (OpenCL GPU),Pixel 7,100,4892,2389,15.36,0.79,70,0.3,option2_20261106220903,4
+Qwen2.5-0.5B-Instruct,FP16 (q0f16),MLC LLM (OpenCL GPU),Pixel 7,100,9049,3447,13.12,1.59,50,0.21,option2_20261106220903,5
+Qwen2.5-0.5B-Instruct,INT4 (q4f16_1),MLC LLM (OpenCL GPU),Pixel 7,100,6121,2355,16.5,1.4,67,0.25,option2_20261106220903,6
