@@ -63,3 +63,45 @@ KV-cache and flash-attention combination, 8 tests each); per-run files: `energy_
   was rerun for its energy.
 - The first config of each run starts with a cool phone, so it may run at higher clocks than later ones.
 - The first 135M sweep (folder 20261107-110023) ran while charging. It is superseded by 20261108-071040.
+
+## 100-prompt end-to-end run (llama.cpp llama-server on CPU, KV f16, flash attention on)
+
+Each model and weight type answered the same 100 prompts (34 QA, 33 arithmetic reasoning, 33 few-shot)
+3 times, greedily, with up to 128 new tokens, on battery. "Accuracy" means the expected answer appears in the output.
+Full data: `prompts_summary.csv` (per category) and `prompts/20261108-102450/prompts_results.jsonl`.
+
+| Model | Weights | Accuracy % | Time to first token | Decode tok/s | Avg response time | Peak memory | Energy per prompt |
+|---|---|---|---|---|---|---|---|
+| smollm2-135m | fp16 | 50.0 | 136 ms | 47.7 | 1.1 s | 378 MB | 6.73 J |
+| smollm2-135m | q8_0 | 48.0 | 153 ms | 75.9 | 0.8 s | 258 MB | 3.25 J |
+| smollm2-135m | q4_0 | 53.0 | 198 ms | 82.9 | 0.9 s | 208 MB | 3.38 J |
+| smollm2-135m | q4_k_m | 57.0 | 240 ms | 73.0 | 0.8 s | 221 MB | 2.77 J |
+| smollm2-360m | fp16 | 52.0 | 537 ms | 18.0 | 2.6 s | 883 MB | 9.81 J |
+| smollm2-360m | q8_0 | 54.0 | 524 ms | 33.9 | 1.7 s | 560 MB | 5.88 J |
+| smollm2-360m | q4_0 | 49.0 | 593 ms | 37.0 | 1.7 s | 411 MB | 5.80 J |
+| smollm2-360m | q4_k_m | 55.0 | 701 ms | 32.6 | 1.8 s | 450 MB | 6.15 J |
+| qwen2.5-0.5b | fp16 | 95.0 | 652 ms | 11.9 | 7.9 s | 1304 MB | 27.50 J |
+| qwen2.5-0.5b | q8_0 | 92.0 | 604 ms | 23.3 | 4.3 s | 747 MB | 14.37 J |
+| qwen2.5-0.5b | q4_0 | 94.0 | 651 ms | 26.5 | 3.9 s | 511 MB | 13.30 J |
+| qwen2.5-0.5b | q4_k_m | 95.0 | 789 ms | 23.4 | 4.3 s | 575 MB | 14.73 J |
+
+### Findings
+
+1. **Quantization doesn't measurably hurt accuracy.** Qwen scores 92 to 95% with every weight type. The
+   SmolLM2 models move by a few prompts either way (135M 48 to 57%, 360M 49 to 55%), which is noise at
+   this sample size. Greedy outputs were identical across all 3 passes (0 of 1200 prompt/config pairs differed).
+2. **Q4_0 cuts memory by 45 to 61%.** Peak server memory drops from 378 to 208 MB (135M), from 883 to
+   411 MB (360M) and from 1304 to 511 MB (Qwen).
+3. **Q4_0 halves response time and energy for the bigger models.** Qwen's average answer drops from 7.9 s and
+   27.5 J to 3.9 s and 13.3 J. The 135M model is fast enough that the gain is smaller.
+4. **Prompt processing (time to first token) does not get faster with quantization**, which matches the
+   llama-bench prefill results.
+5. **Compared with MLC on the GPU**, llama.cpp's time to first token is about 10x shorter (Qwen INT4:
+   0.65 s against 6.1 s) and its decode is about 1.6x faster (26.5 against 16.5 tok/s).
+
+### Caveats
+
+- The prompts are plain "Q: ... A:" completions. SmolLM2-360M-Instruct answers every QA prompt with a blank
+  line first, which hits the "stop at blank line" rule, so it scores 0% on QA for all four weight types.
+  That is a prompt-format effect, not a quantization one: the weight types still compare fairly with each other.
+- 135M FP16 ran first, while the phone was cool and the clocks were high, so its power (6 W) is higher than the rest.
