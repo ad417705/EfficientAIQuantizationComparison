@@ -125,14 +125,17 @@ def main():
     ap.add_argument("--llama", default=str(ROOT / "llama.cpp"))
     ap.add_argument("--models-dir", default=str(ROOT / "models"))
     ap.add_argument("--prompts", default=str(ROOT / "data/prompts.jsonl"))
+    ap.add_argument("--results-dir", default="results/android", help="e.g. results/pi5")
+    ap.add_argument("--logger", default="scripts/android/syslog.sh", help="e.g. scripts/pi5/power_log.sh")
+    ap.add_argument("--log-name", default="syslog.csv", help="e.g. power.csv on the Pi 5")
     args = ap.parse_args()
 
     prompts = [json.loads(l) for l in open(args.prompts)]
-    out_dir = ROOT / "results" / "android" / "prompts" / time.strftime("%Y%m%d-%H%M%S")
+    out_dir = ROOT / args.results_dir / "prompts" / time.strftime("%Y%m%d-%H%M%S")
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "meta.json").write_text(json.dumps({**vars(args), "platform": platform.platform()}, indent=2))
 
-    syslog = subprocess.Popen(["bash", str(ROOT / "scripts/android/syslog.sh"), str(out_dir / "syslog.csv")])
+    syslog = subprocess.Popen(["bash", str(ROOT / args.logger), str(out_dir / args.log_name)])
     try:
         with open(out_dir / "prompts_results.jsonl", "w") as out_f:
             for model in args.models.split(","):
