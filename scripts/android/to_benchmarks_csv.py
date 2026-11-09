@@ -40,13 +40,20 @@ def main(run_dir):
     meta = (run_dir / "meta.txt").read_text() if (run_dir / "meta.txt").exists() else ""
     android = re.search(r"android=(\S*)", meta)
     os_name = f"Android {android.group(1)} (Termux)" if android and android.group(1) else "Android (Termux)"
+    osm = re.search(r"^os=(.*?)(?: kernel=|$)", meta, re.M)
+    if osm:
+        os_name = osm.group(1).strip()
+    dev = re.search(r"device=(.+?)\s{2}", meta)
+    device = dev.group(1) if dev else "Pixel 7"
     cores = re.search(r"cores=(\S*)", meta)
 
     rows = []
     for f in sorted(run_dir.glob("*.csv")):
-        if f.name == "syslog.csv":
+        if f.name in ("syslog.csv", "power.csv"):
             continue
         for r in csv.DictReader(open(f)):
+            if "model_filename" not in r:
+                continue
             model, quant = parse_name(r["model_filename"])
             notes = f"kv={r['type_k']} fa={r['flash_attn']}"
             if cores and cores.group(1):
@@ -56,7 +63,7 @@ def main(run_dir):
                 "model": model, "quant": quant,
                 "params": f"{int(r['model_n_params']) / 1e6:.2f}M",
                 "size_mib": f"{int(r['model_size']) / 2**20:.2f}",
-                "device": "Pixel 7", "os": os_name,
+                "device": device, "os": os_name,
                 "threads": r["n_threads"], "n_batch": r["n_batch"],
                 "test": test_label(r["n_prompt"], r["n_gen"]),
                 "tokens_per_sec": f"{float(r['avg_ts']):.2f}",

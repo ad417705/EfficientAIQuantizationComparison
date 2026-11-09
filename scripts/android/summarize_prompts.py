@@ -12,7 +12,7 @@ from collections import defaultdict
 rows = [json.loads(l) for l in open(sys.argv[1] + "/prompts_results.jsonl")]
 pw = []
 for r in csv.DictReader(open(sys.argv[2])):
-    if r["status"] == "Discharging":
+    if r["status"] not in ("Charging", "Full", "Not charging"):
         pw.append((float(r["unix_ts"]), float(r["power_mW"])))
 pw.sort(); pt = [p[0] for p in pw]
 

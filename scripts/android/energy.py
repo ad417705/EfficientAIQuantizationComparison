@@ -11,6 +11,7 @@ J/token = mean whole-phone power in that window x avg seconds per run / tokens p
 'net' subtracts the idle baseline (median power in the 25 s cooldowns between configs).
 
     python3 scripts/android/energy.py results/android/raw/20261107-131645 results/android/power/smollm2-360m*.csv
+    python3 scripts/android/energy.py results/pi5/raw/<stamp> results/pi5/raw/<stamp>/power.csv   # Pi 5
 """
 import csv, sys, glob, bisect, statistics as st
 from datetime import datetime, timezone
@@ -22,7 +23,7 @@ raw = Path(sys.argv[1]); power_files = sys.argv[2:]
 adb = []
 for f in power_files:
     for r in csv.DictReader(open(f)):
-        try: adb.append((float(r["unix_ts"]), int(r["voltage_uV"]) / 1e6, float(r["power_mW"]) if r["status"] == "Discharging" else None, r["status"]))
+        try: adb.append((float(r["unix_ts"]), int(r["voltage_uV"]) / 1e6, float(r["power_mW"]) if r["status"] not in ("Charging", "Full", "Not charging") else None, r["status"]))
         except (ValueError, KeyError): pass
 adb.sort(); at = [a[0] for a in adb]
 
@@ -35,7 +36,7 @@ def volt(t):
 
 # syslog current -> power
 sl = []
-for r in csv.DictReader(open(raw / "syslog.csv")):
+for r in (csv.DictReader(open(raw / "syslog.csv")) if (raw / "syslog.csv").exists() else []):
     try:
         t, ua = float(r["unix_ts"]), int(r["batt_uA"])
     except (ValueError, KeyError): continue
