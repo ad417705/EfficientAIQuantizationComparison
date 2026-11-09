@@ -1,0 +1,4 @@
+device=Pixel 7  stamp=20261107-224918  llama=
+models=qwen2.5-0.5b-instruct quants=fp16 q8_0 kvs=f16 q8_0 q4_0 threads=4 cores=4-7 batch=128 reps=3
+android= build=
+battery_level=%
