@@ -6,13 +6,13 @@ models on edge hardware.
 
 **Results at a glance:** [`results/SUMMARY_3devices.md`](results/SUMMARY_3devices.md) compares all
 three devices. Per-device detail is in [`results/android/SUMMARY.md`](results/android/SUMMARY.md)
-(Pixel 7, including the MLC LLM GPU runs) and in `results/pi5/`.
+(Pixel 7, including the MLC LLM GPU runs), in `results/pi5/` and in `results/pi3/`.
 
 ## Hardware
 
 | Device | CPU | RAM | OS | Energy measurement |
 |---|---|---|---|---|
-| Raspberry Pi 3 | 4x Cortex-A53 | 1 GB | Raspbian Buster 32-bit | none |
+| Raspberry Pi 3 | 4x Cortex-A53 | 1 GB | Raspberry Pi OS Lite 64-bit (first runs: Raspbian Buster 32-bit) | estimated from CPU load |
 | Raspberry Pi 5 | 4x Cortex-A76 | 4 GB | Raspberry Pi OS (Debian 13) 64-bit | PMIC rails (`vcgencmd pmic_read_adc`) |
 | Pixel 7 (Tensor G2), Hung Nguyen | 2x X1 + 2x A78 used | 8 GB | Android 13, Termux | battery voltage and current over adb |
 
@@ -43,7 +43,8 @@ measure end-to-end latency, peak memory, energy per answer and an accuracy proxy
 ## Repository layout
 
 ```
-scripts/            Pi 3 scripts
+scripts/pi3/        Raspberry Pi 3: setup, trimmed sweep, 100-prompt run, temperature/load logger
+scripts/pi3/legacy-32bit/   the first Pi 3 sweeps (32-bit Raspbian) and energy estimate
 scripts/android/    Pixel 7: Termux setup, model download, sweep, 100-prompt run, energy and summary tools
 scripts/pi5/        Raspberry Pi 5: setup, sweep, 100-prompt run, PMIC power logger
 scripts/compare_devices.py   builds the three-device table
@@ -51,10 +52,23 @@ data/               the 100-prompt set
 results/benchmarks.csv       shared table, one row per device x model x quant x test
 results/android/    Pixel 7 raw runs, power logs, energy tables, MLC results, SUMMARY.md
 results/pi5/        Pi 5 raw runs (with power.csv), energy and prompt summaries
+results/pi3/        Pi 3 raw runs and summaries; legacy-32bit/ holds the first runs' logs and CSVs
 notes/              setup log and planning
 ```
 
 ## Reproducing
+
+### Raspberry Pi 3 (see `scripts/pi3/README.md`)
+
+```bash
+git clone -b RaspberryPi3 https://github.com/ad417705/EfficientAIQuantizationComparison.git
+cd EfficientAIQuantizationComparison
+bash scripts/pi3/00_setup.sh                     # build llama.cpp b3600 (~40-60 min)
+bash scripts/pi3/01_get_models.sh                # 11 GGUF files into ./models (~3.7 GB)
+PILOT=1 bash scripts/pi3/02_bench_sweep.sh       # pipeline check
+nohup bash scripts/pi3/02_bench_sweep.sh > sweep-pi3.log 2>&1 &     # full sweep (~12 h)
+nohup bash scripts/pi3/03_run_prompts.sh > prompts-pi3.log 2>&1 &   # 100 prompts, Qwen (~6-7 h)
+```
 
 ### Raspberry Pi 5 (see `scripts/pi5/README.md`)
 

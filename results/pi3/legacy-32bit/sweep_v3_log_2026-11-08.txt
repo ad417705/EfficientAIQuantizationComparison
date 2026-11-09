@@ -1,0 +1,87 @@
+=== Sweep v3 (KV-quant + FA) started: Sun 08 Nov 2026 10:16:25 PM EST ===
+
+=== Qwen2.5-0.5B-Instruct-Q8_0 + KVq8 + FA - Sun 08 Nov 2026 10:16:25 PM EST ===
+throttle_before: throttled=0x50005
+temp_before: temp=53.7'C
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v | fa |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | -: | ------------: | ---------------: |
+| qwen2 1B Q8_0                  | 638.74 MiB |   630.17 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         pp128 |      3.81 ± 0.01 |
+| qwen2 1B Q8_0                  | 638.74 MiB |   630.17 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         tg128 |      2.22 ± 0.00 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0x50005
+temp_after: temp=68.8'C
+
+=== Qwen2.5-0.5B-Instruct-Q4_K_M + KVq8 + FA - Sun 08 Nov 2026 10:22:02 PM EST ===
+throttle_before: throttled=0x50005
+temp_before: temp=68.2'C
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v | fa |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | -: | ------------: | ---------------: |
+| qwen2 1B Q4_K - Medium         | 511.65 MiB |   630.17 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         pp128 |      2.00 ± 0.00 |
+| qwen2 1B Q4_K - Medium         | 511.65 MiB |   630.17 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         tg128 |      1.44 ± 0.00 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=70.9'C
+
+=== Qwen2.5-0.5B-Instruct-Q4_0 + KVq8 + FA - Sun 08 Nov 2026 10:31:09 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=70.9'C
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v | fa |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | -: | ------------: | ---------------: |
+| qwen2 1B Q4_0                  | 468.89 MiB |   630.17 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         pp128 |      3.83 ± 0.04 |
+| qwen2 1B Q4_0                  | 468.89 MiB |   630.17 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         tg128 |      2.33 ± 0.00 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=72.0'C
+
+=== SmolLM2-135M-Instruct-Q8_0 + KVq8 + FA - Sun 08 Nov 2026 10:36:28 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=72.0'C
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v | fa |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | -: | ------------: | ---------------: |
+| llama ?B Q8_0                  | 165.09 MiB |   162.83 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         pp128 |     11.09 ± 0.03 |
+| llama ?B Q8_0                  | 165.09 MiB |   162.83 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         tg128 |      6.56 ± 0.02 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=72.5'C
+
+=== SmolLM2-135M-Instruct-Q4_K_M + KVq8 + FA - Sun 08 Nov 2026 10:38:21 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=72.0'C
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v | fa |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | -: | ------------: | ---------------: |
+| llama ?B Q4_K - Medium         | 127.55 MiB |   162.83 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         pp128 |      5.93 ± 0.01 |
+| llama ?B Q4_K - Medium         | 127.55 MiB |   162.83 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         tg128 |      4.24 ± 0.01 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=72.0'C
+
+=== SmolLM2-360M-Instruct-Q8_0 + KVq8 + FA - Sun 08 Nov 2026 10:41:24 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=72.0'C
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v | fa |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | -: | ------------: | ---------------: |
+| llama 3B Q8_0                  | 414.61 MiB |   409.01 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         pp128 |      4.24 ± 0.04 |
+| llama 3B Q8_0                  | 414.61 MiB |   409.01 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         tg128 |      2.91 ± 0.01 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=73.1'C
+
+=== SmolLM2-360M-Instruct-Q4_K_M + KVq8 + FA - Sun 08 Nov 2026 10:45:57 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=73.1'C
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v | fa |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | -: | ------------: | ---------------: |
+| llama 3B Q4_K - Medium         | 304.16 MiB |   409.01 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         pp128 |      2.19 ± 0.00 |
+| llama 3B Q4_K - Medium         | 304.16 MiB |   409.01 M | CPU        |       4 |     128 |   q8_0 |   q8_0 |  1 |         tg128 |      1.76 ± 0.00 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=72.0'C
+
+=== Sweep v3 finished: Sun 08 Nov 2026 10:53:45 PM EST ===

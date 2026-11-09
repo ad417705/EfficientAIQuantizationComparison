@@ -1,0 +1,8 @@
+label,duration_s,avg_cpu_util_pct,avg_power_w,energy_j,throttled_during_run
+Qwen2.5-0.5B-Instruct-Q8_0 + KVq8 + FA,337.0,91.7,3.326,1121.0,True
+Qwen2.5-0.5B-Instruct-Q4_K_M + KVq8 + FA,547.0,95.8,3.412,1866.6,True
+Qwen2.5-0.5B-Instruct-Q4_0 + KVq8 + FA,319.0,93.9,3.373,1075.9,True
+SmolLM2-135M-Instruct-Q8_0 + KVq8 + FA,113.0,92.3,3.339,377.3,True
+SmolLM2-135M-Instruct-Q4_K_M + KVq8 + FA,183.0,95.8,3.412,624.3,True
+SmolLM2-360M-Instruct-Q8_0 + KVq8 + FA,273.0,93.2,3.356,916.2,True
+SmolLM2-360M-Instruct-Q4_K_M + KVq8 + FA,468.0,96.8,3.432,1606.3,True

@@ -1,0 +1,45 @@
+model,quant,params,size_mib,device,os,threads,n_batch,test,tokens_per_sec,std,date,notes
+Qwen2.5-0.5B-Instruct,Q4_K_M,630.17M,511.65,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,2.02,0.02,2026-11-01,first run
+Qwen2.5-0.5B-Instruct,Q4_K_M,630.17M,511.65,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,1.44,0.00,2026-11-01,first run
+Qwen2.5-0.5B-Instruct,Q8_0,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,4.00,0.01,2026-11-01,baseline
+Qwen2.5-0.5B-Instruct,Q8_0,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,2.38,0.01,2026-11-01,baseline
+Qwen2.5-0.5B-Instruct,Q4_0,630.17M,468.89,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,4.00,0.01,2026-11-01,
+Qwen2.5-0.5B-Instruct,Q4_0,630.17M,468.89,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,2.48,0.00,2026-11-01,
+SmolLM2-135M-Instruct,f16,162.83M,310.63,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,5.41,0.03,2026-11-06,
+SmolLM2-135M-Instruct,f16,162.83M,310.63,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,5.13,0.81,2026-11-06,
+SmolLM2-135M-Instruct,Q8_0,162.83M,165.09,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,19.53,2.99,2026-11-06,
+SmolLM2-135M-Instruct,Q8_0,162.83M,165.09,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,7.09,0.02,2026-11-06,
+SmolLM2-135M-Instruct,Q4_K_M,162.83M,127.55,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,10.11,0.72,2026-11-06,
+SmolLM2-135M-Instruct,Q4_K_M,162.83M,127.55,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,4.60,0.02,2026-11-06,
+SmolLM2-360M-Instruct,f16,409.01M,780.24,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,3.33,0.07,2026-11-06,
+SmolLM2-360M-Instruct,f16,409.01M,780.24,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,2.09,0.05,2026-11-06,
+SmolLM2-360M-Instruct,Q8_0,409.01M,414.61,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,5.30,0.56,2026-11-06,
+SmolLM2-360M-Instruct,Q8_0,409.01M,414.61,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,3.03,0.00,2026-11-06,
+SmolLM2-360M-Instruct,Q4_K_M,409.01M,304.16,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,2.90,0.11,2026-11-06,
+SmolLM2-360M-Instruct,Q4_K_M,409.01M,304.16,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,1.81,0.00,2026-11-06,
+Qwen2.5-0.5B-Instruct,Q8_0,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp256 prefill,3.88,0.01,2026-11-06,throttled during run (0x50000->0xd0005 71C)
+Qwen2.5-0.5B-Instruct,Q8_0,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode (ctx256),2.33,0.01,2026-11-06,throttled during run
+Qwen2.5-0.5B-Instruct,Q8_0,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp512 prefill,3.72,0.00,2026-11-06,throttled (73C)
+Qwen2.5-0.5B-Instruct,Q8_0,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode (ctx512),2.33,0.01,2026-11-06,throttled during run
+SmolLM2-135M-Instruct,Q8_0,162.83M,165.09,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp256 prefill,11.14,0.03,2026-11-06,throttled during run (74C)
+SmolLM2-135M-Instruct,Q8_0,162.83M,165.09,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode (ctx256),7.01,0.04,2026-11-06,throttled during run
+SmolLM2-135M-Instruct,Q8_0,162.83M,165.09,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp512 prefill,10.13,0.02,2026-11-06,throttled during run
+SmolLM2-135M-Instruct,Q8_0,162.83M,165.09,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode (ctx512),6.96,0.05,2026-11-06,throttled during run
+SmolLM2-360M-Instruct,Q8_0,409.01M,414.61,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp256 prefill,4.06,0.00,2026-11-06,throttled during run (75C)
+SmolLM2-360M-Instruct,Q8_0,409.01M,414.61,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode (ctx256),2.84,0.00,2026-11-06,throttled during run
+SmolLM2-360M-Instruct,Q8_0,409.01M,414.61,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp512 prefill,3.90,0.05,2026-11-06,throttled during run
+SmolLM2-360M-Instruct,Q8_0,409.01M,414.61,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode (ctx512),2.95,0.00,2026-11-06,throttled during run
+Qwen2.5-0.5B-Instruct,Q8_0 + KVq8 + FA,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,3.81,0.01,2026-11-08,KV-cache q8_0 + flash attn
+Qwen2.5-0.5B-Instruct,Q8_0 + KVq8 + FA,630.17M,638.74,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,2.22,0.00,2026-11-08,KV-cache q8_0 + flash attn
+Qwen2.5-0.5B-Instruct,Q4_K_M + KVq8 + FA,630.17M,511.65,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,2.00,0.00,2026-11-08,KV-cache q8_0 + flash attn
+Qwen2.5-0.5B-Instruct,Q4_K_M + KVq8 + FA,630.17M,511.65,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,1.44,0.00,2026-11-08,KV-cache q8_0 + flash attn
+Qwen2.5-0.5B-Instruct,Q4_0 + KVq8 + FA,630.17M,468.89,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,3.83,0.04,2026-11-08,KV-cache q8_0 + flash attn; throttled mid-run
+Qwen2.5-0.5B-Instruct,Q4_0 + KVq8 + FA,630.17M,468.89,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,2.33,0.00,2026-11-08,KV-cache q8_0 + flash attn; throttled
+SmolLM2-135M-Instruct,Q8_0 + KVq8 + FA,162.83M,165.09,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,11.09,0.03,2026-11-08,KV-cache q8_0 + flash attn; throttled
+SmolLM2-135M-Instruct,Q8_0 + KVq8 + FA,162.83M,165.09,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,6.56,0.02,2026-11-08,KV-cache q8_0 + flash attn; throttled
+SmolLM2-135M-Instruct,Q4_K_M + KVq8 + FA,162.83M,127.55,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,5.93,0.01,2026-11-08,KV-cache q8_0 + flash attn; throttled
+SmolLM2-135M-Instruct,Q4_K_M + KVq8 + FA,162.83M,127.55,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,4.24,0.01,2026-11-08,KV-cache q8_0 + flash attn; throttled
+SmolLM2-360M-Instruct,Q8_0 + KVq8 + FA,409.01M,414.61,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,4.24,0.04,2026-11-08,KV-cache q8_0 + flash attn; throttled
+SmolLM2-360M-Instruct,Q8_0 + KVq8 + FA,409.01M,414.61,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,2.91,0.01,2026-11-08,KV-cache q8_0 + flash attn; throttled
+SmolLM2-360M-Instruct,Q4_K_M + KVq8 + FA,409.01M,304.16,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,pp128 prefill,2.19,0.00,2026-11-08,KV-cache q8_0 + flash attn; throttled
+SmolLM2-360M-Instruct,Q4_K_M + KVq8 + FA,409.01M,304.16,Raspberry Pi 3,Raspbian Buster 32-bit,4,128,tg128 decode,1.76,0.00,2026-11-08,KV-cache q8_0 + flash attn; throttled

@@ -1,0 +1,138 @@
+=== Sweep v2 started: Fri 06 Nov 2026 10:03:26 PM EST ===
+
+=== Qwen2.5-0.5B-Instruct-Q8_0 + KVq8 - Fri 06 Nov 2026 10:03:26 PM EST ===
+throttle_before: throttled=0x50000
+temp_before: temp=56.9'C
+main: error: failed to create context with model 'models/Qwen2.5-0.5B-Instruct-Q8_0.gguf'
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | ------------: | ---------------: |
+throttle_after: throttled=0x50000
+temp_after: temp=58.0'C
+
+=== Qwen2.5-0.5B-Instruct-Q4_K_M + KVq8 - Fri 06 Nov 2026 10:03:52 PM EST ===
+throttle_before: throttled=0x50000
+temp_before: temp=58.0'C
+main: error: failed to create context with model 'models/Qwen2.5-0.5B-Instruct-Q4_K_M.gguf'
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | ------------: | ---------------: |
+throttle_after: throttled=0x50005
+temp_after: temp=58.5'C
+
+=== Qwen2.5-0.5B-Instruct-Q4_0 + KVq8 - Fri 06 Nov 2026 10:04:16 PM EST ===
+throttle_before: throttled=0x50005
+temp_before: temp=58.5'C
+main: error: failed to create context with model 'models/Qwen2.5-0.5B-Instruct-Q4_0.gguf'
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | ------------: | ---------------: |
+throttle_after: throttled=0x50005
+temp_after: temp=58.5'C
+
+=== SmolLM2-135M-Instruct-Q8_0 + KVq8 - Fri 06 Nov 2026 10:04:36 PM EST ===
+throttle_before: throttled=0x50005
+temp_before: temp=58.0'C
+main: error: failed to create context with model 'models/SmolLM2-135M-Instruct-Q8_0.gguf'
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | ------------: | ---------------: |
+throttle_after: throttled=0x50000
+temp_after: temp=59.1'C
+
+=== SmolLM2-135M-Instruct-Q4_K_M + KVq8 - Fri 06 Nov 2026 10:04:44 PM EST ===
+throttle_before: throttled=0x50000
+temp_before: temp=58.0'C
+main: error: failed to create context with model 'models/SmolLM2-135M-Instruct-Q4_K_M.gguf'
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | ------------: | ---------------: |
+throttle_after: throttled=0x50000
+temp_after: temp=58.5'C
+
+=== SmolLM2-360M-Instruct-Q8_0 + KVq8 - Fri 06 Nov 2026 10:04:50 PM EST ===
+throttle_before: throttled=0x50000
+temp_before: temp=58.5'C
+main: error: failed to create context with model 'models/SmolLM2-360M-Instruct-Q8_0.gguf'
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | ------------: | ---------------: |
+throttle_after: throttled=0x50005
+temp_after: temp=58.0'C
+
+=== SmolLM2-360M-Instruct-Q4_K_M + KVq8 - Fri 06 Nov 2026 10:05:09 PM EST ===
+throttle_before: throttled=0x50005
+temp_before: temp=58.0'C
+main: error: failed to create context with model 'models/SmolLM2-360M-Instruct-Q4_K_M.gguf'
+| model                          |       size |     params | backend    | threads | n_batch | type_k | type_v |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -----: | -----: | ------------: | ---------------: |
+throttle_after: throttled=0x50000
+temp_after: temp=58.5'C
+
+=== Qwen2.5-0.5B-Instruct-Q8_0 + ctx256 - Fri 06 Nov 2026 10:05:23 PM EST ===
+throttle_before: throttled=0x50000
+temp_before: temp=58.5'C
+| model                          |       size |     params | backend    | threads | n_batch |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | ------------: | ---------------: |
+| qwen2 1B Q8_0                  | 638.74 MiB |   630.17 M | CPU        |       4 |     128 |         pp256 |      3.88 ± 0.01 |
+| qwen2 1B Q8_0                  | 638.74 MiB |   630.17 M | CPU        |       4 |     128 |         tg128 |      2.33 ± 0.01 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=70.9'C
+
+=== Qwen2.5-0.5B-Instruct-Q8_0 + ctx512 - Fri 06 Nov 2026 10:13:01 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=71.4'C
+| model                          |       size |     params | backend    | threads | n_batch |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | ------------: | ---------------: |
+| qwen2 1B Q8_0                  | 638.74 MiB |   630.17 M | CPU        |       4 |     128 |         pp512 |      3.72 ± 0.00 |
+| qwen2 1B Q8_0                  | 638.74 MiB |   630.17 M | CPU        |       4 |     128 |         tg128 |      2.33 ± 0.01 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=73.6'C
+
+=== SmolLM2-135M-Instruct-Q8_0 + ctx256 - Fri 06 Nov 2026 10:25:00 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=74.1'C
+| model                          |       size |     params | backend    | threads | n_batch |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | ------------: | ---------------: |
+| llama ?B Q8_0                  | 165.09 MiB |   162.83 M | CPU        |       4 |     128 |         pp256 |     11.14 ± 0.03 |
+| llama ?B Q8_0                  | 165.09 MiB |   162.83 M | CPU        |       4 |     128 |         tg128 |      7.01 ± 0.04 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=73.6'C
+
+=== SmolLM2-135M-Instruct-Q8_0 + ctx512 - Fri 06 Nov 2026 10:27:36 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=73.6'C
+| model                          |       size |     params | backend    | threads | n_batch |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | ------------: | ---------------: |
+| llama ?B Q8_0                  | 165.09 MiB |   162.83 M | CPU        |       4 |     128 |         pp512 |     10.13 ± 0.02 |
+| llama ?B Q8_0                  | 165.09 MiB |   162.83 M | CPU        |       4 |     128 |         tg128 |      6.96 ± 0.05 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=73.6'C
+
+=== SmolLM2-360M-Instruct-Q8_0 + ctx256 - Fri 06 Nov 2026 10:31:55 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=73.1'C
+| model                          |       size |     params | backend    | threads | n_batch |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | ------------: | ---------------: |
+| llama 3B Q8_0                  | 414.61 MiB |   409.01 M | CPU        |       4 |     128 |         pp256 |      4.06 ± 0.00 |
+| llama 3B Q8_0                  | 414.61 MiB |   409.01 M | CPU        |       4 |     128 |         tg128 |      2.84 ± 0.00 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=75.2'C
+
+=== SmolLM2-360M-Instruct-Q8_0 + ctx512 - Fri 06 Nov 2026 10:38:43 PM EST ===
+throttle_before: throttled=0xd0005
+temp_before: temp=75.2'C
+| model                          |       size |     params | backend    | threads | n_batch |          test |              t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | ------------: | ---------------: |
+| llama 3B Q8_0                  | 414.61 MiB |   409.01 M | CPU        |       4 |     128 |         pp512 |      3.90 ± 0.05 |
+| llama 3B Q8_0                  | 414.61 MiB |   409.01 M | CPU        |       4 |     128 |         tg128 |      2.95 ± 0.00 |
+
+build: 2fb9267 (1)
+throttle_after: throttled=0xd0005
+temp_after: temp=75.8'C
+
+=== Sweep v2 finished: Fri 06 Nov 2026 10:49:44 PM EST ===
