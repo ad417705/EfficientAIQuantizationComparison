@@ -8,3 +8,6 @@ llama.cpp/
 __pycache__/
 *.pyc
 .DS_Store
+
+# raw MLC traces are GBs; keep only parsed CSVs in git
+results/android/mlc/**/traces/

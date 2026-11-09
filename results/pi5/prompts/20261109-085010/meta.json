@@ -1,0 +1,19 @@
+{
+  "device": "Raspberry Pi 5",
+  "threads": 4,
+  "cores": "0-3",
+  "models": "smollm2-135m-instruct,smollm2-360m-instruct,qwen2.5-0.5b-instruct",
+  "quants": "fp16,q8_0,q4_0,q4_k_m",
+  "kvs": "f16",
+  "runs": 3,
+  "n_predict": 128,
+  "ctx": 4096,
+  "port": 8089,
+  "llama": "/home/joel/EfficientAIQuantizationComparison/llama.cpp",
+  "models_dir": "/home/joel/EfficientAIQuantizationComparison/models",
+  "prompts": "/home/joel/EfficientAIQuantizationComparison/data/prompts.jsonl",
+  "results_dir": "results/pi5",
+  "logger": "scripts/pi5/power_log.sh",
+  "log_name": "power.csv",
+  "platform": "Linux-6.18.50+rpt-rpi-2712-aarch64-with-glibc2.41"
+}

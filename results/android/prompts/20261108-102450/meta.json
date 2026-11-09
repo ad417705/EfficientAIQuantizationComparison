@@ -1,0 +1,16 @@
+{
+  "device": "Pixel 7",
+  "threads": 4,
+  "cores": "4-7",
+  "models": "smollm2-135m-instruct,smollm2-360m-instruct,qwen2.5-0.5b-instruct",
+  "quants": "fp16,q8_0,q4_0,q4_k_m",
+  "kvs": "f16",
+  "runs": 3,
+  "n_predict": 128,
+  "ctx": 4096,
+  "port": 8089,
+  "llama": "/data/data/com.termux/files/home/EfficientAIQuantizationComparison/llama.cpp",
+  "models_dir": "/data/data/com.termux/files/home/EfficientAIQuantizationComparison/models",
+  "prompts": "/data/data/com.termux/files/home/EfficientAIQuantizationComparison/data/prompts.jsonl",
+  "platform": "Android-13-aarch64-64bit"
+}

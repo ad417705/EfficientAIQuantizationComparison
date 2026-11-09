@@ -1,0 +1,4 @@
+device=Pixel 7  stamp=20261107-083727  llama=b3600
+models=smollm2-135m-instruct quants=q8_0 q4_0 kvs=f16 q8_0 threads=4 cores=4-7 batch=128 reps=1
+android=13 build=TQ3A.230805.001.A2
+battery_level=%
