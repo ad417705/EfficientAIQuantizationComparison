@@ -1,0 +1,963 @@
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+INFO [                    main] build info | tid="1995896992" timestamp=1794380377 build=1 commit="2fb9267"
+INFO [                    main] system info | tid="1995896992" timestamp=1794380377 n_threads=4 n_threads_batch=-1 total_threads=4 system_info="AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 0 | NEON = 1 | SVE = 0 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | "
+INFO [                    main] HTTP server is listening | tid="1995896992" timestamp=1794380377 n_threads_http="3" hostname="127.0.0.1" port="8089"
+INFO [                    main] loading model | tid="1995896992" timestamp=1794380377 n_threads_http="3" hostname="127.0.0.1" port="8089"
+llama_model_loader: loaded meta data with 37 key-value pairs and 272 tensors from /home/pi/EfficientAIQuantizationComparison/models/smollm2-135m-instruct-q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Smollm2 135M 8k Lc100K Mix1 Ep2
+llama_model_loader: - kv   3:                       general.organization str              = HuggingFaceTB
+llama_model_loader: - kv   4:                           general.finetune str              = 8k-lc100k-mix1-ep2
+llama_model_loader: - kv   5:                           general.basename str              = smollm2
+llama_model_loader: - kv   6:                         general.size_label str              = 135M
+llama_model_loader: - kv   7:                            general.license str              = apache-2.0
+llama_model_loader: - kv   8:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv   9:                          llama.block_count u32              = 30
+llama_model_loader: - kv  10:                       llama.context_length u32              = 8192
+llama_model_loader: - kv  11:                     llama.embedding_length u32              = 576
+llama_model_loader: - kv  12:                  llama.feed_forward_length u32              = 1536
+llama_model_loader: - kv  13:                 llama.attention.head_count u32              = 9
+llama_model_loader: - kv  14:              llama.attention.head_count_kv u32              = 3
+llama_model_loader: - kv  15:                       llama.rope.freq_base f32              = 100000.000000
+llama_model_loader: - kv  16:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  17:                          general.file_type u32              = 7
+llama_model_loader: - kv  18:                           llama.vocab_size u32              = 49152
+llama_model_loader: - kv  19:                 llama.rope.dimension_count u32              = 64
+llama_model_loader: - kv  20:            tokenizer.ggml.add_space_prefix bool             = false
+llama_model_loader: - kv  21:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  22:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  23:                         tokenizer.ggml.pre str              = smollm
+llama_model_loader: - kv  24:                      tokenizer.ggml.tokens arr[str,49152]   = ["<|endoftext|>", "<|im_start|>", "<|...
+llama_model_loader: - kv  25:                  tokenizer.ggml.token_type arr[i32,49152]   = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+llama_model_loader: - kv  26:                      tokenizer.ggml.merges arr[str,48900]   = ["Ġ t", "Ġ a", "i n", "h e", "Ġ Ġ...
+llama_model_loader: - kv  27:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  28:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  29:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  30:            tokenizer.ggml.padding_token_id u32              = 2
+llama_model_loader: - kv  31:                    tokenizer.chat_template str              = {% for message in messages %}{% if lo...
+llama_model_loader: - kv  32:               general.quantization_version u32              = 2
+llama_model_loader: - kv  33:                      quantize.imatrix.file str              = /models_out/SmolLM2-135M-Instruct-GGU...
+llama_model_loader: - kv  34:                   quantize.imatrix.dataset str              = /training_dir/calibration_datav3.txt
+llama_model_loader: - kv  35:             quantize.imatrix.entries_count i32              = 210
+llama_model_loader: - kv  36:              quantize.imatrix.chunks_count i32              = 141
+llama_model_loader: - type  f32:   61 tensors
+llama_model_loader: - type q8_0:  211 tensors
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380377 remote_addr="127.0.0.1" remote_port=48026 status=503 method="GET" path="/health" params={}
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380378 remote_addr="127.0.0.1" remote_port=48028 status=503 method="GET" path="/health" params={}
+llm_load_vocab: special tokens cache size = 17
+llm_load_vocab: token to piece cache size = 0.3170 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = llama
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 49152
+llm_load_print_meta: n_merges         = 48900
+llm_load_print_meta: vocab_only       = 0
+llm_load_print_meta: n_ctx_train      = 8192
+llm_load_print_meta: n_embd           = 576
+llm_load_print_meta: n_layer          = 30
+llm_load_print_meta: n_head           = 9
+llm_load_print_meta: n_head_kv        = 3
+llm_load_print_meta: n_rot            = 64
+llm_load_print_meta: n_swa            = 0
+llm_load_print_meta: n_embd_head_k    = 64
+llm_load_print_meta: n_embd_head_v    = 64
+llm_load_print_meta: n_gqa            = 3
+llm_load_print_meta: n_embd_k_gqa     = 192
+llm_load_print_meta: n_embd_v_gqa     = 192
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 1536
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 0
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 100000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 8192
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = ?B
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 134.52 M
+llm_load_print_meta: model size       = 136.40 MiB (8.51 BPW) 
+llm_load_print_meta: general.name     = Smollm2 135M 8k Lc100K Mix1 Ep2
+llm_load_print_meta: BOS token        = 1 '<|im_start|>'
+llm_load_print_meta: EOS token        = 2 '<|im_end|>'
+llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+llm_load_print_meta: PAD token        = 2 '<|im_end|>'
+llm_load_print_meta: LF token         = 143 'Ä'
+llm_load_print_meta: EOT token        = 2 '<|im_end|>'
+llm_load_print_meta: max token length = 162
+llm_load_tensors: ggml ctx size =    0.10 MiB
+llm_load_tensors:        CPU buffer size =   136.40 MiB
+....................................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 512
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 1
+llama_new_context_with_model: freq_base  = 100000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =    11.25 MiB
+llama_new_context_with_model: KV self size  =   11.25 MiB, K (f16):    5.62 MiB, V (f16):    5.62 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.38 MiB
+llama_new_context_with_model:        CPU compute buffer size =    97.13 MiB
+llama_new_context_with_model: graph nodes  = 847
+llama_new_context_with_model: graph splits = 1
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380378 remote_addr="127.0.0.1" remote_port=48030 status=503 method="GET" path="/health" params={}
+INFO [                    init] initializing slots | tid="1995896992" timestamp=1794380378 n_slots=1
+INFO [                    init] new slot | tid="1995896992" timestamp=1794380378 id_slot=0 n_ctx_slot=512
+INFO [                    main] model loaded | tid="1995896992" timestamp=1794380378
+INFO [                    main] chat template | tid="1995896992" timestamp=1794380378 chat_example="<|im_start|>system\nYou are a helpful assistant<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\nHi there<|im_end|>\n<|im_start|>user\nHow are you?<|im_end|>\n<|im_start|>assistant\n" built_in=true
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380378
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380379 remote_addr="127.0.0.1" remote_port=48032 status=200 method="GET" path="/health" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380379 id_slot=0 id_task=0
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380379 id_slot=0 id_task=0 p0=0
+INFO [           print_timings] prompt eval time     =    1045.84 ms /    12 tokens (   87.15 ms per token,    11.47 tokens per second) | tid="1995896992" timestamp=1794380381 id_slot=0 id_task=0 t_prompt_processing=1045.842 n_prompt_tokens_processed=12 t_token=87.15350000000001 n_tokens_second=11.474008502240299
+INFO [           print_timings] generation eval time =    1132.41 ms /     9 runs   (  125.82 ms per token,     7.95 tokens per second) | tid="1995896992" timestamp=1794380381 id_slot=0 id_task=0 t_token_generation=1132.413 n_decoded=9 t_token=125.82366666666667 n_tokens_second=7.9476304139920675
+INFO [           print_timings]           total time =    2178.26 ms | tid="1995896992" timestamp=1794380381 id_slot=0 id_task=0 t_prompt_processing=1045.842 t_token_generation=1132.413 t_total=2178.255
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380381 id_slot=0 id_task=0 n_ctx=512 n_past=20 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380381
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380381 remote_addr="127.0.0.1" remote_port=48034 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380381 id_slot=0 id_task=10
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380381 id_slot=0 id_task=10 p0=0
+INFO [           print_timings] prompt eval time     =    1356.36 ms /    15 tokens (   90.42 ms per token,    11.06 tokens per second) | tid="1995896992" timestamp=1794380402 id_slot=0 id_task=10 t_prompt_processing=1356.363 n_prompt_tokens_processed=15 t_token=90.4242 n_tokens_second=11.05898642177647
+INFO [           print_timings] generation eval time =   20003.38 ms /   128 runs   (  156.28 ms per token,     6.40 tokens per second) | tid="1995896992" timestamp=1794380402 id_slot=0 id_task=10 t_token_generation=20003.38 n_decoded=128 t_token=156.27640625 n_tokens_second=6.398918582759514
+INFO [           print_timings]           total time =   21359.74 ms | tid="1995896992" timestamp=1794380402 id_slot=0 id_task=10 t_prompt_processing=1356.363 t_token_generation=20003.38 t_total=21359.743000000002
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380402 id_slot=0 id_task=10 n_ctx=512 n_past=142 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380402
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380402 remote_addr="127.0.0.1" remote_port=48036 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380402 id_slot=0 id_task=139
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380402 id_slot=0 id_task=139 p0=0
+INFO [           print_timings] prompt eval time     =     981.84 ms /    11 tokens (   89.26 ms per token,    11.20 tokens per second) | tid="1995896992" timestamp=1794380408 id_slot=0 id_task=139 t_prompt_processing=981.836 n_prompt_tokens_processed=11 t_token=89.25781818181818 n_tokens_second=11.203500380919014
+INFO [           print_timings] generation eval time =    5051.04 ms /    34 runs   (  148.56 ms per token,     6.73 tokens per second) | tid="1995896992" timestamp=1794380408 id_slot=0 id_task=139 t_token_generation=5051.039 n_decoded=34 t_token=148.55997058823527 n_tokens_second=6.731288354732561
+INFO [           print_timings]           total time =    6032.88 ms | tid="1995896992" timestamp=1794380408 id_slot=0 id_task=139 t_prompt_processing=981.836 t_token_generation=5051.039 t_total=6032.875
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380408 id_slot=0 id_task=139 n_ctx=512 n_past=44 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380408
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380408 remote_addr="127.0.0.1" remote_port=48038 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380408 id_slot=0 id_task=174
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380408 id_slot=0 id_task=174 p0=0
+INFO [           print_timings] prompt eval time     =    1158.89 ms /    13 tokens (   89.15 ms per token,    11.22 tokens per second) | tid="1995896992" timestamp=1794380411 id_slot=0 id_task=174 t_prompt_processing=1158.89 n_prompt_tokens_processed=13 t_token=89.14538461538463 n_tokens_second=11.217630663824865
+INFO [           print_timings] generation eval time =    1345.98 ms /    10 runs   (  134.60 ms per token,     7.43 tokens per second) | tid="1995896992" timestamp=1794380411 id_slot=0 id_task=174 t_token_generation=1345.976 n_decoded=10 t_token=134.5976 n_tokens_second=7.42955297865638
+INFO [           print_timings]           total time =    2504.87 ms | tid="1995896992" timestamp=1794380411 id_slot=0 id_task=174 t_prompt_processing=1158.89 t_token_generation=1345.976 t_total=2504.866
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380411 id_slot=0 id_task=174 n_ctx=512 n_past=22 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380411
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380411 remote_addr="127.0.0.1" remote_port=48040 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380411 id_slot=0 id_task=185
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380411 id_slot=0 id_task=185 p0=0
+INFO [           print_timings] prompt eval time     =    1092.61 ms /    13 tokens (   84.05 ms per token,    11.90 tokens per second) | tid="1995896992" timestamp=1794380412 id_slot=0 id_task=185 t_prompt_processing=1092.611 n_prompt_tokens_processed=13 t_token=84.04700000000001 n_tokens_second=11.898104631932132
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 47619.05 tokens per second) | tid="1995896992" timestamp=1794380412 id_slot=0 id_task=185 t_token_generation=0.021 n_decoded=1 t_token=0.021 n_tokens_second=47619.04761904762
+INFO [           print_timings]           total time =    1092.63 ms | tid="1995896992" timestamp=1794380412 id_slot=0 id_task=185 t_prompt_processing=1092.611 t_token_generation=0.021 t_total=1092.632
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380412 remote_addr="127.0.0.1" remote_port=48042 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380412 id_slot=0 id_task=185 n_ctx=512 n_past=13 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380412
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380412 id_slot=0 id_task=187
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380412 id_slot=0 id_task=187 p0=0
+INFO [           print_timings] prompt eval time     =    1052.03 ms /    12 tokens (   87.67 ms per token,    11.41 tokens per second) | tid="1995896992" timestamp=1794380414 id_slot=0 id_task=187 t_prompt_processing=1052.029 n_prompt_tokens_processed=12 t_token=87.66908333333333 n_tokens_second=11.406529667908394
+INFO [           print_timings] generation eval time =    1207.99 ms /     9 runs   (  134.22 ms per token,     7.45 tokens per second) | tid="1995896992" timestamp=1794380414 id_slot=0 id_task=187 t_token_generation=1207.986 n_decoded=9 t_token=134.2206666666667 n_tokens_second=7.4504174717256655
+INFO [           print_timings]           total time =    2260.02 ms | tid="1995896992" timestamp=1794380414 id_slot=0 id_task=187 t_prompt_processing=1052.029 t_token_generation=1207.986 t_total=2260.0150000000003
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380414 remote_addr="127.0.0.1" remote_port=48044 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380414 id_slot=0 id_task=187 n_ctx=512 n_past=20 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380414
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380414 id_slot=0 id_task=197
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380414 id_slot=0 id_task=197 p0=0
+INFO [           print_timings] prompt eval time     =    1233.98 ms /    15 tokens (   82.27 ms per token,    12.16 tokens per second) | tid="1995896992" timestamp=1794380435 id_slot=0 id_task=197 t_prompt_processing=1233.982 n_prompt_tokens_processed=15 t_token=82.26546666666667 n_tokens_second=12.155768884797348
+INFO [           print_timings] generation eval time =   19994.99 ms /   128 runs   (  156.21 ms per token,     6.40 tokens per second) | tid="1995896992" timestamp=1794380435 id_slot=0 id_task=197 t_token_generation=19994.994 n_decoded=128 t_token=156.210890625 n_tokens_second=6.401602321060962
+INFO [           print_timings]           total time =   21228.98 ms | tid="1995896992" timestamp=1794380435 id_slot=0 id_task=197 t_prompt_processing=1233.982 t_token_generation=19994.994 t_total=21228.976
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380435 id_slot=0 id_task=197 n_ctx=512 n_past=142 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380435
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380435 remote_addr="127.0.0.1" remote_port=48046 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380435 id_slot=0 id_task=326
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380435 id_slot=0 id_task=326 p0=0
+INFO [           print_timings] prompt eval time     =     977.13 ms /    11 tokens (   88.83 ms per token,    11.26 tokens per second) | tid="1995896992" timestamp=1794380441 id_slot=0 id_task=326 t_prompt_processing=977.135 n_prompt_tokens_processed=11 t_token=88.83045454545454 n_tokens_second=11.25740046155342
+INFO [           print_timings] generation eval time =    4984.31 ms /    34 runs   (  146.60 ms per token,     6.82 tokens per second) | tid="1995896992" timestamp=1794380441 id_slot=0 id_task=326 t_token_generation=4984.305 n_decoded=34 t_token=146.59720588235294 n_tokens_second=6.8214124135661836
+INFO [           print_timings]           total time =    5961.44 ms | tid="1995896992" timestamp=1794380441 id_slot=0 id_task=326 t_prompt_processing=977.135 t_token_generation=4984.305 t_total=5961.4400000000005
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380441 id_slot=0 id_task=326 n_ctx=512 n_past=44 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380441
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380441 remote_addr="127.0.0.1" remote_port=48048 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380441 id_slot=0 id_task=361
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380441 id_slot=0 id_task=361 p0=0
+INFO [           print_timings] prompt eval time     =    1169.08 ms /    13 tokens (   89.93 ms per token,    11.12 tokens per second) | tid="1995896992" timestamp=1794380444 id_slot=0 id_task=361 t_prompt_processing=1169.075 n_prompt_tokens_processed=13 t_token=89.92884615384615 n_tokens_second=11.119902487008961
+INFO [           print_timings] generation eval time =    1352.91 ms /    10 runs   (  135.29 ms per token,     7.39 tokens per second) | tid="1995896992" timestamp=1794380444 id_slot=0 id_task=361 t_token_generation=1352.906 n_decoded=10 t_token=135.29059999999998 n_tokens_second=7.391496526735782
+INFO [           print_timings]           total time =    2521.98 ms | tid="1995896992" timestamp=1794380444 id_slot=0 id_task=361 t_prompt_processing=1169.075 t_token_generation=1352.906 t_total=2521.9809999999998
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380444 id_slot=0 id_task=361 n_ctx=512 n_past=22 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380444
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380444 remote_addr="127.0.0.1" remote_port=48050 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380444 id_slot=0 id_task=372
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380444 id_slot=0 id_task=372 p0=0
+INFO [           print_timings] prompt eval time     =    1183.23 ms /    13 tokens (   91.02 ms per token,    10.99 tokens per second) | tid="1995896992" timestamp=1794380445 id_slot=0 id_task=372 t_prompt_processing=1183.229 n_prompt_tokens_processed=13 t_token=91.01761538461538 n_tokens_second=10.986884195705143
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 43478.26 tokens per second) | tid="1995896992" timestamp=1794380445 id_slot=0 id_task=372 t_token_generation=0.023 n_decoded=1 t_token=0.023 n_tokens_second=43478.260869565216
+INFO [           print_timings]           total time =    1183.25 ms | tid="1995896992" timestamp=1794380445 id_slot=0 id_task=372 t_prompt_processing=1183.229 t_token_generation=0.023 t_total=1183.252
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380445 id_slot=0 id_task=372 n_ctx=512 n_past=13 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380445
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380445 remote_addr="127.0.0.1" remote_port=48052 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380445 id_slot=0 id_task=374
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380445 id_slot=0 id_task=374 p0=0
+INFO [           print_timings] prompt eval time     =    1456.71 ms /    16 tokens (   91.04 ms per token,    10.98 tokens per second) | tid="1995896992" timestamp=1794380446 id_slot=0 id_task=374 t_prompt_processing=1456.708 n_prompt_tokens_processed=16 t_token=91.04425 n_tokens_second=10.983670028585001
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 47619.05 tokens per second) | tid="1995896992" timestamp=1794380446 id_slot=0 id_task=374 t_token_generation=0.021 n_decoded=1 t_token=0.021 n_tokens_second=47619.04761904762
+INFO [           print_timings]           total time =    1456.73 ms | tid="1995896992" timestamp=1794380446 id_slot=0 id_task=374 t_prompt_processing=1456.708 t_token_generation=0.021 t_total=1456.729
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380446 id_slot=0 id_task=374 n_ctx=512 n_past=16 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380446
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380446 remote_addr="127.0.0.1" remote_port=48054 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380446 id_slot=0 id_task=376
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380446 id_slot=0 id_task=376 p0=0
+INFO [           print_timings] prompt eval time     =    1662.47 ms /    19 tokens (   87.50 ms per token,    11.43 tokens per second) | tid="1995896992" timestamp=1794380448 id_slot=0 id_task=376 t_prompt_processing=1662.471 n_prompt_tokens_processed=19 t_token=87.49847368421052 n_tokens_second=11.428770787580657
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 41666.67 tokens per second) | tid="1995896992" timestamp=1794380448 id_slot=0 id_task=376 t_token_generation=0.024 n_decoded=1 t_token=0.024 n_tokens_second=41666.666666666664
+INFO [           print_timings]           total time =    1662.49 ms | tid="1995896992" timestamp=1794380448 id_slot=0 id_task=376 t_prompt_processing=1662.471 t_token_generation=0.024 t_total=1662.495
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380448 id_slot=0 id_task=376 n_ctx=512 n_past=19 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380448
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380448 remote_addr="127.0.0.1" remote_port=48056 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380448 id_slot=0 id_task=378
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380448 id_slot=0 id_task=378 p0=0
+INFO [           print_timings] prompt eval time     =    1018.16 ms /    11 tokens (   92.56 ms per token,    10.80 tokens per second) | tid="1995896992" timestamp=1794380461 id_slot=0 id_task=378 t_prompt_processing=1018.1560000000001 n_prompt_tokens_processed=11 t_token=92.55963636363637 n_tokens_second=10.803845383222216
+INFO [           print_timings] generation eval time =   11402.50 ms /    75 runs   (  152.03 ms per token,     6.58 tokens per second) | tid="1995896992" timestamp=1794380461 id_slot=0 id_task=378 t_token_generation=11402.498 n_decoded=75 t_token=152.03330666666668 n_tokens_second=6.577506086824133
+INFO [           print_timings]           total time =   12420.65 ms | tid="1995896992" timestamp=1794380461 id_slot=0 id_task=378 t_prompt_processing=1018.1560000000001 t_token_generation=11402.498 t_total=12420.654
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380461 id_slot=0 id_task=378 n_ctx=512 n_past=85 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380461
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380461 remote_addr="127.0.0.1" remote_port=48058 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380461 id_slot=0 id_task=454
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380461 id_slot=0 id_task=454 p0=0
+INFO [           print_timings] prompt eval time     =    1348.97 ms /    15 tokens (   89.93 ms per token,    11.12 tokens per second) | tid="1995896992" timestamp=1794380462 id_slot=0 id_task=454 t_prompt_processing=1348.969 n_prompt_tokens_processed=15 t_token=89.93126666666667 n_tokens_second=11.119603193253514
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 47619.05 tokens per second) | tid="1995896992" timestamp=1794380462 id_slot=0 id_task=454 t_token_generation=0.021 n_decoded=1 t_token=0.021 n_tokens_second=47619.04761904762
+INFO [           print_timings]           total time =    1348.99 ms | tid="1995896992" timestamp=1794380462 id_slot=0 id_task=454 t_prompt_processing=1348.969 t_token_generation=0.021 t_total=1348.99
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380462 id_slot=0 id_task=454 n_ctx=512 n_past=15 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380462
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380462 remote_addr="127.0.0.1" remote_port=48060 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380462 id_slot=0 id_task=456
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380462 id_slot=0 id_task=456 p0=0
+INFO [           print_timings] prompt eval time     =     980.06 ms /    12 tokens (   81.67 ms per token,    12.24 tokens per second) | tid="1995896992" timestamp=1794380465 id_slot=0 id_task=456 t_prompt_processing=980.0600000000001 n_prompt_tokens_processed=12 t_token=81.67166666666667 n_tokens_second=12.244148317449952
+INFO [           print_timings] generation eval time =    1791.69 ms /    13 runs   (  137.82 ms per token,     7.26 tokens per second) | tid="1995896992" timestamp=1794380465 id_slot=0 id_task=456 t_token_generation=1791.695 n_decoded=13 t_token=137.8226923076923 n_tokens_second=7.255699212198506
+INFO [           print_timings]           total time =    2771.76 ms | tid="1995896992" timestamp=1794380465 id_slot=0 id_task=456 t_prompt_processing=980.0600000000001 t_token_generation=1791.695 t_total=2771.755
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380465 remote_addr="127.0.0.1" remote_port=48062 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380465 id_slot=0 id_task=456 n_ctx=512 n_past=24 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380465
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380465 id_slot=0 id_task=470
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380465 id_slot=0 id_task=470 p0=0
+INFO [           print_timings] prompt eval time     =    1105.00 ms /    12 tokens (   92.08 ms per token,    10.86 tokens per second) | tid="1995896992" timestamp=1794380467 id_slot=0 id_task=470 t_prompt_processing=1105.001 n_prompt_tokens_processed=12 t_token=92.08341666666666 n_tokens_second=10.859718678987623
+INFO [           print_timings] generation eval time =    1344.26 ms /    10 runs   (  134.43 ms per token,     7.44 tokens per second) | tid="1995896992" timestamp=1794380467 id_slot=0 id_task=470 t_token_generation=1344.256 n_decoded=10 t_token=134.4256 n_tokens_second=7.43905922681394
+INFO [           print_timings]           total time =    2449.26 ms | tid="1995896992" timestamp=1794380467 id_slot=0 id_task=470 t_prompt_processing=1105.001 t_token_generation=1344.256 t_total=2449.257
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380467 remote_addr="127.0.0.1" remote_port=48064 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380467 id_slot=0 id_task=470 n_ctx=512 n_past=21 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380467
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380467 id_slot=0 id_task=481
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380467 id_slot=0 id_task=481 p0=0
+INFO [           print_timings] prompt eval time     =    1065.28 ms /    12 tokens (   88.77 ms per token,    11.26 tokens per second) | tid="1995896992" timestamp=1794380474 id_slot=0 id_task=481 t_prompt_processing=1065.281 n_prompt_tokens_processed=12 t_token=88.77341666666666 n_tokens_second=11.26463346290791
+INFO [           print_timings] generation eval time =    5979.91 ms /    40 runs   (  149.50 ms per token,     6.69 tokens per second) | tid="1995896992" timestamp=1794380474 id_slot=0 id_task=481 t_token_generation=5979.91 n_decoded=40 t_token=149.49775 n_tokens_second=6.689063882232341
+INFO [           print_timings]           total time =    7045.19 ms | tid="1995896992" timestamp=1794380474 id_slot=0 id_task=481 t_prompt_processing=1065.281 t_token_generation=5979.91 t_total=7045.191
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380474 id_slot=0 id_task=481 n_ctx=512 n_past=51 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380474
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380474 remote_addr="127.0.0.1" remote_port=48066 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380474 id_slot=0 id_task=522
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380474 id_slot=0 id_task=522 p0=0
+INFO [           print_timings] prompt eval time     =    1191.20 ms /    13 tokens (   91.63 ms per token,    10.91 tokens per second) | tid="1995896992" timestamp=1794380475 id_slot=0 id_task=522 t_prompt_processing=1191.205 n_prompt_tokens_processed=13 t_token=91.63115384615384 n_tokens_second=10.913318866190119
+INFO [           print_timings] generation eval time =       0.03 ms /     1 runs   (    0.03 ms per token, 40000.00 tokens per second) | tid="1995896992" timestamp=1794380475 id_slot=0 id_task=522 t_token_generation=0.025 n_decoded=1 t_token=0.025 n_tokens_second=40000.0
+INFO [           print_timings]           total time =    1191.23 ms | tid="1995896992" timestamp=1794380475 id_slot=0 id_task=522 t_prompt_processing=1191.205 t_token_generation=0.025 t_total=1191.23
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380475 id_slot=0 id_task=522 n_ctx=512 n_past=13 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380475
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380475 remote_addr="127.0.0.1" remote_port=48068 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380475 id_slot=0 id_task=524
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380475 id_slot=0 id_task=524 p0=0
+INFO [           print_timings] prompt eval time     =    1430.60 ms /    16 tokens (   89.41 ms per token,    11.18 tokens per second) | tid="1995896992" timestamp=1794380477 id_slot=0 id_task=524 t_prompt_processing=1430.595 n_prompt_tokens_processed=16 t_token=89.4121875 n_tokens_second=11.184157640701946
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 50000.00 tokens per second) | tid="1995896992" timestamp=1794380477 id_slot=0 id_task=524 t_token_generation=0.02 n_decoded=1 t_token=0.02 n_tokens_second=50000.0
+INFO [           print_timings]           total time =    1430.62 ms | tid="1995896992" timestamp=1794380477 id_slot=0 id_task=524 t_prompt_processing=1430.595 t_token_generation=0.02 t_total=1430.615
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380477 id_slot=0 id_task=524 n_ctx=512 n_past=16 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380477
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380477 remote_addr="127.0.0.1" remote_port=48070 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380477 id_slot=0 id_task=526
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380477 id_slot=0 id_task=526 p0=0
+INFO [           print_timings] prompt eval time     =    1138.78 ms /    14 tokens (   81.34 ms per token,    12.29 tokens per second) | tid="1995896992" timestamp=1794380479 id_slot=0 id_task=526 t_prompt_processing=1138.776 n_prompt_tokens_processed=14 t_token=81.34114285714286 n_tokens_second=12.293901522336261
+INFO [           print_timings] generation eval time =    1355.84 ms /    10 runs   (  135.58 ms per token,     7.38 tokens per second) | tid="1995896992" timestamp=1794380479 id_slot=0 id_task=526 t_token_generation=1355.843 n_decoded=10 t_token=135.5843 n_tokens_second=7.375485214733564
+INFO [           print_timings]           total time =    2494.62 ms | tid="1995896992" timestamp=1794380479 id_slot=0 id_task=526 t_prompt_processing=1138.776 t_token_generation=1355.843 t_total=2494.619
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380479 id_slot=0 id_task=526 n_ctx=512 n_past=23 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380479
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380479 remote_addr="127.0.0.1" remote_port=48072 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380479 id_slot=0 id_task=537
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380479 id_slot=0 id_task=537 p0=0
+INFO [           print_timings] prompt eval time     =    1182.91 ms /    13 tokens (   90.99 ms per token,    10.99 tokens per second) | tid="1995896992" timestamp=1794380483 id_slot=0 id_task=537 t_prompt_processing=1182.915 n_prompt_tokens_processed=13 t_token=90.99346153846153 n_tokens_second=10.98980061965568
+INFO [           print_timings] generation eval time =    2473.54 ms /    18 runs   (  137.42 ms per token,     7.28 tokens per second) | tid="1995896992" timestamp=1794380483 id_slot=0 id_task=537 t_token_generation=2473.538 n_decoded=18 t_token=137.4187777777778 n_tokens_second=7.277025863358477
+INFO [           print_timings]           total time =    3656.45 ms | tid="1995896992" timestamp=1794380483 id_slot=0 id_task=537 t_prompt_processing=1182.915 t_token_generation=2473.538 t_total=3656.453
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380483 id_slot=0 id_task=537 n_ctx=512 n_past=30 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380483
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380483 remote_addr="127.0.0.1" remote_port=48074 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380483 id_slot=0 id_task=556
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380483 id_slot=0 id_task=556 p0=0
+INFO [           print_timings] prompt eval time     =    1118.51 ms /    13 tokens (   86.04 ms per token,    11.62 tokens per second) | tid="1995896992" timestamp=1794380489 id_slot=0 id_task=556 t_prompt_processing=1118.511 n_prompt_tokens_processed=13 t_token=86.03930769230769 n_tokens_second=11.622594681679484
+INFO [           print_timings] generation eval time =    5376.76 ms /    37 runs   (  145.32 ms per token,     6.88 tokens per second) | tid="1995896992" timestamp=1794380489 id_slot=0 id_task=556 t_token_generation=5376.7570000000005 n_decoded=37 t_token=145.31775675675678 n_tokens_second=6.8814714892266835
+INFO [           print_timings]           total time =    6495.27 ms | tid="1995896992" timestamp=1794380489 id_slot=0 id_task=556 t_prompt_processing=1118.511 t_token_generation=5376.7570000000005 t_total=6495.268
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380489 id_slot=0 id_task=556 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380489
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380489 remote_addr="127.0.0.1" remote_port=48076 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380490 id_slot=0 id_task=594
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380490 id_slot=0 id_task=594 p0=0
+INFO [           print_timings] prompt eval time     =    1097.89 ms /    12 tokens (   91.49 ms per token,    10.93 tokens per second) | tid="1995896992" timestamp=1794380491 id_slot=0 id_task=594 t_prompt_processing=1097.887 n_prompt_tokens_processed=12 t_token=91.49058333333333 n_tokens_second=10.930086611827994
+INFO [           print_timings] generation eval time =       0.03 ms /     1 runs   (    0.03 ms per token, 35714.29 tokens per second) | tid="1995896992" timestamp=1794380491 id_slot=0 id_task=594 t_token_generation=0.028 n_decoded=1 t_token=0.028 n_tokens_second=35714.28571428571
+INFO [           print_timings]           total time =    1097.91 ms | tid="1995896992" timestamp=1794380491 id_slot=0 id_task=594 t_prompt_processing=1097.887 t_token_generation=0.028 t_total=1097.915
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380491 id_slot=0 id_task=594 n_ctx=512 n_past=12 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380491
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380491 remote_addr="127.0.0.1" remote_port=48078 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380491 id_slot=0 id_task=596
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380491 id_slot=0 id_task=596 p0=0
+INFO [           print_timings] prompt eval time     =    1146.60 ms /    13 tokens (   88.20 ms per token,    11.34 tokens per second) | tid="1995896992" timestamp=1794380498 id_slot=0 id_task=596 t_prompt_processing=1146.602 n_prompt_tokens_processed=13 t_token=88.20015384615385 n_tokens_second=11.33784870425832
+INFO [           print_timings] generation eval time =    6470.16 ms /    43 runs   (  150.47 ms per token,     6.65 tokens per second) | tid="1995896992" timestamp=1794380498 id_slot=0 id_task=596 t_token_generation=6470.157 n_decoded=43 t_token=150.46876744186048 n_tokens_second=6.645897464311917
+INFO [           print_timings]           total time =    7616.76 ms | tid="1995896992" timestamp=1794380498 id_slot=0 id_task=596 t_prompt_processing=1146.602 t_token_generation=6470.157 t_total=7616.759
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380498 remote_addr="127.0.0.1" remote_port=48080 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380498 id_slot=0 id_task=596 n_ctx=512 n_past=55 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380498
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380498 id_slot=0 id_task=640
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380498 id_slot=0 id_task=640 p0=0
+INFO [           print_timings] prompt eval time     =    1059.88 ms /    12 tokens (   88.32 ms per token,    11.32 tokens per second) | tid="1995896992" timestamp=1794380501 id_slot=0 id_task=640 t_prompt_processing=1059.877 n_prompt_tokens_processed=12 t_token=88.32308333333333 n_tokens_second=11.322068504175485
+INFO [           print_timings] generation eval time =    1223.90 ms /     9 runs   (  135.99 ms per token,     7.35 tokens per second) | tid="1995896992" timestamp=1794380501 id_slot=0 id_task=640 t_token_generation=1223.897 n_decoded=9 t_token=135.98855555555554 n_tokens_second=7.35355998094611
+INFO [           print_timings]           total time =    2283.77 ms | tid="1995896992" timestamp=1794380501 id_slot=0 id_task=640 t_prompt_processing=1059.877 t_token_generation=1223.897 t_total=2283.774
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380501 id_slot=0 id_task=640 n_ctx=512 n_past=20 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380501
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380501 remote_addr="127.0.0.1" remote_port=48082 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380501 id_slot=0 id_task=650
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380501 id_slot=0 id_task=650 p0=0
+INFO [           print_timings] prompt eval time     =    1154.41 ms /    14 tokens (   82.46 ms per token,    12.13 tokens per second) | tid="1995896992" timestamp=1794380502 id_slot=0 id_task=650 t_prompt_processing=1154.412 n_prompt_tokens_processed=14 t_token=82.458 n_tokens_second=12.127386063207936
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 43478.26 tokens per second) | tid="1995896992" timestamp=1794380502 id_slot=0 id_task=650 t_token_generation=0.023 n_decoded=1 t_token=0.023 n_tokens_second=43478.260869565216
+INFO [           print_timings]           total time =    1154.43 ms | tid="1995896992" timestamp=1794380502 id_slot=0 id_task=650 t_prompt_processing=1154.412 t_token_generation=0.023 t_total=1154.435
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380502 remote_addr="127.0.0.1" remote_port=48084 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380502 id_slot=0 id_task=650 n_ctx=512 n_past=14 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380502
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380502 id_slot=0 id_task=652
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380502 id_slot=0 id_task=652 p0=0
+INFO [           print_timings] prompt eval time     =    1243.93 ms /    14 tokens (   88.85 ms per token,    11.25 tokens per second) | tid="1995896992" timestamp=1794380512 id_slot=0 id_task=652 t_prompt_processing=1243.931 n_prompt_tokens_processed=14 t_token=88.85221428571428 n_tokens_second=11.254643545341342
+INFO [           print_timings] generation eval time =    8993.65 ms /    59 runs   (  152.43 ms per token,     6.56 tokens per second) | tid="1995896992" timestamp=1794380512 id_slot=0 id_task=652 t_token_generation=8993.654 n_decoded=59 t_token=152.43481355932204 n_tokens_second=6.560181212219193
+INFO [           print_timings]           total time =   10237.59 ms | tid="1995896992" timestamp=1794380512 id_slot=0 id_task=652 t_prompt_processing=1243.931 t_token_generation=8993.654 t_total=10237.585000000001
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380512 remote_addr="127.0.0.1" remote_port=48086 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380512 id_slot=0 id_task=652 n_ctx=512 n_past=72 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380512
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380512 id_slot=0 id_task=712
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380512 id_slot=0 id_task=712 p0=0
+INFO [           print_timings] prompt eval time     =    1163.33 ms /    13 tokens (   89.49 ms per token,    11.17 tokens per second) | tid="1995896992" timestamp=1794380513 id_slot=0 id_task=712 t_prompt_processing=1163.328 n_prompt_tokens_processed=13 t_token=89.48676923076923 n_tokens_second=11.174836331627882
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 50000.00 tokens per second) | tid="1995896992" timestamp=1794380513 id_slot=0 id_task=712 t_token_generation=0.02 n_decoded=1 t_token=0.02 n_tokens_second=50000.0
+INFO [           print_timings]           total time =    1163.35 ms | tid="1995896992" timestamp=1794380513 id_slot=0 id_task=712 t_prompt_processing=1163.328 t_token_generation=0.02 t_total=1163.348
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380513 id_slot=0 id_task=712 n_ctx=512 n_past=13 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380513
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380513 remote_addr="127.0.0.1" remote_port=48088 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380513 id_slot=0 id_task=714
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380513 id_slot=0 id_task=714 p0=0
+INFO [           print_timings] prompt eval time     =    1111.82 ms /    12 tokens (   92.65 ms per token,    10.79 tokens per second) | tid="1995896992" timestamp=1794380515 id_slot=0 id_task=714 t_prompt_processing=1111.824 n_prompt_tokens_processed=12 t_token=92.652 n_tokens_second=10.793075162975434
+INFO [           print_timings] generation eval time =    1206.87 ms /     9 runs   (  134.10 ms per token,     7.46 tokens per second) | tid="1995896992" timestamp=1794380515 id_slot=0 id_task=714 t_token_generation=1206.867 n_decoded=9 t_token=134.09633333333332 n_tokens_second=7.457325455083287
+INFO [           print_timings]           total time =    2318.69 ms | tid="1995896992" timestamp=1794380515 id_slot=0 id_task=714 t_prompt_processing=1111.824 t_token_generation=1206.867 t_total=2318.691
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380515 id_slot=0 id_task=714 n_ctx=512 n_past=20 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380515
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380515 remote_addr="127.0.0.1" remote_port=48090 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380515 id_slot=0 id_task=724
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380515 id_slot=0 id_task=724 p0=0
+INFO [           print_timings] prompt eval time     =    1410.75 ms /    16 tokens (   88.17 ms per token,    11.34 tokens per second) | tid="1995896992" timestamp=1794380520 id_slot=0 id_task=724 t_prompt_processing=1410.748 n_prompt_tokens_processed=16 t_token=88.17175 n_tokens_second=11.34150110437867
+INFO [           print_timings] generation eval time =    2727.05 ms /    19 runs   (  143.53 ms per token,     6.97 tokens per second) | tid="1995896992" timestamp=1794380520 id_slot=0 id_task=724 t_token_generation=2727.049 n_decoded=19 t_token=143.5288947368421 n_tokens_second=6.9672382124413605
+INFO [           print_timings]           total time =    4137.80 ms | tid="1995896992" timestamp=1794380520 id_slot=0 id_task=724 t_prompt_processing=1410.748 t_token_generation=2727.049 t_total=4137.7970000000005
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380520 id_slot=0 id_task=724 n_ctx=512 n_past=34 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380520
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380520 remote_addr="127.0.0.1" remote_port=48092 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380520 id_slot=0 id_task=744
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380520 id_slot=0 id_task=744 p0=0
+INFO [           print_timings] prompt eval time     =    1157.51 ms /    13 tokens (   89.04 ms per token,    11.23 tokens per second) | tid="1995896992" timestamp=1794380530 id_slot=0 id_task=744 t_prompt_processing=1157.5140000000001 n_prompt_tokens_processed=13 t_token=89.03953846153847 n_tokens_second=11.230965672985379
+INFO [           print_timings] generation eval time =    8772.94 ms /    58 runs   (  151.26 ms per token,     6.61 tokens per second) | tid="1995896992" timestamp=1794380530 id_slot=0 id_task=744 t_token_generation=8772.941 n_decoded=58 t_token=151.2576034482759 n_tokens_second=6.611237896162757
+INFO [           print_timings]           total time =    9930.46 ms | tid="1995896992" timestamp=1794380530 id_slot=0 id_task=744 t_prompt_processing=1157.5140000000001 t_token_generation=8772.941 t_total=9930.455000000002
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380530 id_slot=0 id_task=744 n_ctx=512 n_past=70 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380530
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380530 remote_addr="127.0.0.1" remote_port=48094 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380530 id_slot=0 id_task=803
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380530 id_slot=0 id_task=803 p0=0
+INFO [           print_timings] prompt eval time     =    1267.49 ms /    14 tokens (   90.54 ms per token,    11.05 tokens per second) | tid="1995896992" timestamp=1794380531 id_slot=0 id_task=803 t_prompt_processing=1267.493 n_prompt_tokens_processed=14 t_token=90.53521428571428 n_tokens_second=11.045425891898416
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 47619.05 tokens per second) | tid="1995896992" timestamp=1794380531 id_slot=0 id_task=803 t_token_generation=0.021 n_decoded=1 t_token=0.021 n_tokens_second=47619.04761904762
+INFO [           print_timings]           total time =    1267.51 ms | tid="1995896992" timestamp=1794380531 id_slot=0 id_task=803 t_prompt_processing=1267.493 t_token_generation=0.021 t_total=1267.514
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380531 id_slot=0 id_task=803 n_ctx=512 n_past=14 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380531
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380531 remote_addr="127.0.0.1" remote_port=48096 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380531 id_slot=0 id_task=805
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380531 id_slot=0 id_task=805 p0=0
+INFO [           print_timings] prompt eval time     =    1260.34 ms /    14 tokens (   90.02 ms per token,    11.11 tokens per second) | tid="1995896992" timestamp=1794380543 id_slot=0 id_task=805 t_prompt_processing=1260.343 n_prompt_tokens_processed=14 t_token=90.0245 n_tokens_second=11.108087242917204
+INFO [           print_timings] generation eval time =   10811.93 ms /    71 runs   (  152.28 ms per token,     6.57 tokens per second) | tid="1995896992" timestamp=1794380543 id_slot=0 id_task=805 t_token_generation=10811.928 n_decoded=71 t_token=152.28067605633802 n_tokens_second=6.566821384678107
+INFO [           print_timings]           total time =   12072.27 ms | tid="1995896992" timestamp=1794380543 id_slot=0 id_task=805 t_prompt_processing=1260.343 t_token_generation=10811.928 t_total=12072.271
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380543 id_slot=0 id_task=805 n_ctx=512 n_past=84 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380543
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380543 remote_addr="127.0.0.1" remote_port=48098 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380543 id_slot=0 id_task=877
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380543 id_slot=0 id_task=877 p0=0
+INFO [           print_timings] prompt eval time     =    1159.64 ms /    13 tokens (   89.20 ms per token,    11.21 tokens per second) | tid="1995896992" timestamp=1794380549 id_slot=0 id_task=877 t_prompt_processing=1159.645 n_prompt_tokens_processed=13 t_token=89.20346153846154 n_tokens_second=11.21032729844047
+INFO [           print_timings] generation eval time =    4561.85 ms /    31 runs   (  147.16 ms per token,     6.80 tokens per second) | tid="1995896992" timestamp=1794380549 id_slot=0 id_task=877 t_token_generation=4561.852 n_decoded=31 t_token=147.15651612903224 n_tokens_second=6.795485693091315
+INFO [           print_timings]           total time =    5721.50 ms | tid="1995896992" timestamp=1794380549 id_slot=0 id_task=877 t_prompt_processing=1159.645 t_token_generation=4561.852 t_total=5721.496999999999
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380549 remote_addr="127.0.0.1" remote_port=48100 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380549 id_slot=0 id_task=877 n_ctx=512 n_past=43 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380549
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380549 id_slot=0 id_task=909
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380549 id_slot=0 id_task=909 p0=0
+INFO [           print_timings] prompt eval time     =    1408.96 ms /    16 tokens (   88.06 ms per token,    11.36 tokens per second) | tid="1995896992" timestamp=1794380550 id_slot=0 id_task=909 t_prompt_processing=1408.961 n_prompt_tokens_processed=16 t_token=88.0600625 n_tokens_second=11.355885649070485
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 45454.55 tokens per second) | tid="1995896992" timestamp=1794380550 id_slot=0 id_task=909 t_token_generation=0.022 n_decoded=1 t_token=0.022 n_tokens_second=45454.545454545456
+INFO [           print_timings]           total time =    1408.98 ms | tid="1995896992" timestamp=1794380550 id_slot=0 id_task=909 t_prompt_processing=1408.961 t_token_generation=0.022 t_total=1408.983
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380550 id_slot=0 id_task=909 n_ctx=512 n_past=16 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380550
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380550 remote_addr="127.0.0.1" remote_port=48102 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380550 id_slot=0 id_task=911
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380550 id_slot=0 id_task=911 p0=0
+INFO [           print_timings] prompt eval time     =    1050.05 ms /    12 tokens (   87.50 ms per token,    11.43 tokens per second) | tid="1995896992" timestamp=1794380557 id_slot=0 id_task=911 t_prompt_processing=1050.051 n_prompt_tokens_processed=12 t_token=87.50425 n_tokens_second=11.428016353491403
+INFO [           print_timings] generation eval time =    5771.02 ms /    39 runs   (  147.97 ms per token,     6.76 tokens per second) | tid="1995896992" timestamp=1794380557 id_slot=0 id_task=911 t_token_generation=5771.015 n_decoded=39 t_token=147.9747435897436 n_tokens_second=6.757910003699522
+INFO [           print_timings]           total time =    6821.07 ms | tid="1995896992" timestamp=1794380557 id_slot=0 id_task=911 t_prompt_processing=1050.051 t_token_generation=5771.015 t_total=6821.066000000001
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380557 remote_addr="127.0.0.1" remote_port=48104 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380557 id_slot=0 id_task=911 n_ctx=512 n_past=50 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380557
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380557 id_slot=0 id_task=951
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380557 id_slot=0 id_task=951 p0=0
+INFO [           print_timings] prompt eval time     =    1000.96 ms /    11 tokens (   91.00 ms per token,    10.99 tokens per second) | tid="1995896992" timestamp=1794380559 id_slot=0 id_task=951 t_prompt_processing=1000.9590000000001 n_prompt_tokens_processed=11 t_token=90.99627272727274 n_tokens_second=10.98946110679858
+INFO [           print_timings] generation eval time =    1193.90 ms /     9 runs   (  132.66 ms per token,     7.54 tokens per second) | tid="1995896992" timestamp=1794380559 id_slot=0 id_task=951 t_token_generation=1193.9 n_decoded=9 t_token=132.65555555555557 n_tokens_second=7.5383197922774094
+INFO [           print_timings]           total time =    2194.86 ms | tid="1995896992" timestamp=1794380559 id_slot=0 id_task=951 t_prompt_processing=1000.9590000000001 t_token_generation=1193.9 t_total=2194.8590000000004
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380559 id_slot=0 id_task=951 n_ctx=512 n_past=19 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380559
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380559 remote_addr="127.0.0.1" remote_port=48106 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380559 id_slot=0 id_task=961
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380559 id_slot=0 id_task=961 p0=0
+INFO [           print_timings] prompt eval time     =    1236.46 ms /    14 tokens (   88.32 ms per token,    11.32 tokens per second) | tid="1995896992" timestamp=1794380560 id_slot=0 id_task=961 t_prompt_processing=1236.46 n_prompt_tokens_processed=14 t_token=88.31857142857143 n_tokens_second=11.322646911343675
+INFO [           print_timings] generation eval time =       0.02 ms /     1 runs   (    0.02 ms per token, 50000.00 tokens per second) | tid="1995896992" timestamp=1794380560 id_slot=0 id_task=961 t_token_generation=0.02 n_decoded=1 t_token=0.02 n_tokens_second=50000.0
+INFO [           print_timings]           total time =    1236.48 ms | tid="1995896992" timestamp=1794380560 id_slot=0 id_task=961 t_prompt_processing=1236.46 t_token_generation=0.02 t_total=1236.48
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380560 id_slot=0 id_task=961 n_ctx=512 n_past=14 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380560
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380560 remote_addr="127.0.0.1" remote_port=48108 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380560 id_slot=0 id_task=963
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380560 id_slot=0 id_task=963 p0=0
+INFO [           print_timings] prompt eval time     =    1071.20 ms /    12 tokens (   89.27 ms per token,    11.20 tokens per second) | tid="1995896992" timestamp=1794380563 id_slot=0 id_task=963 t_prompt_processing=1071.202 n_prompt_tokens_processed=12 t_token=89.26683333333334 n_tokens_second=11.202368927615893
+INFO [           print_timings] generation eval time =    1246.87 ms /     9 runs   (  138.54 ms per token,     7.22 tokens per second) | tid="1995896992" timestamp=1794380563 id_slot=0 id_task=963 t_token_generation=1246.872 n_decoded=9 t_token=138.54133333333334 n_tokens_second=7.218062479548822
+INFO [           print_timings]           total time =    2318.07 ms | tid="1995896992" timestamp=1794380563 id_slot=0 id_task=963 t_prompt_processing=1071.202 t_token_generation=1246.872 t_total=2318.074
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380563 id_slot=0 id_task=963 n_ctx=512 n_past=20 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380563
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380563 remote_addr="127.0.0.1" remote_port=48110 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380563 id_slot=0 id_task=973
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380563 id_slot=0 id_task=973 p0=0
+INFO [           print_timings] prompt eval time     =    3552.88 ms /    41 tokens (   86.66 ms per token,    11.54 tokens per second) | tid="1995896992" timestamp=1794380587 id_slot=0 id_task=973 t_prompt_processing=3552.881 n_prompt_tokens_processed=41 t_token=86.65563414634146 n_tokens_second=11.539930552135015
+INFO [           print_timings] generation eval time =   20447.10 ms /   128 runs   (  159.74 ms per token,     6.26 tokens per second) | tid="1995896992" timestamp=1794380587 id_slot=0 id_task=973 t_token_generation=20447.096 n_decoded=128 t_token=159.7429375 n_tokens_second=6.2600576629561475
+INFO [           print_timings]           total time =   23999.98 ms | tid="1995896992" timestamp=1794380587 id_slot=0 id_task=973 t_prompt_processing=3552.881 t_token_generation=20447.096 t_total=23999.977000000003
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380587 id_slot=0 id_task=973 n_ctx=512 n_past=168 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380587
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380587 remote_addr="127.0.0.1" remote_port=48112 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380587 id_slot=0 id_task=1102
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380587 id_slot=0 id_task=1102 p0=0
+INFO [           print_timings] prompt eval time     =    3286.88 ms /    39 tokens (   84.28 ms per token,    11.87 tokens per second) | tid="1995896992" timestamp=1794380610 id_slot=0 id_task=1102 t_prompt_processing=3286.876 n_prompt_tokens_processed=39 t_token=84.2788717948718 n_tokens_second=11.86537003525536
+INFO [           print_timings] generation eval time =   20327.09 ms /   128 runs   (  158.81 ms per token,     6.30 tokens per second) | tid="1995896992" timestamp=1794380610 id_slot=0 id_task=1102 t_token_generation=20327.093 n_decoded=128 t_token=158.8054140625 n_tokens_second=6.297014531295744
+INFO [           print_timings]           total time =   23613.97 ms | tid="1995896992" timestamp=1794380610 id_slot=0 id_task=1102 t_prompt_processing=3286.876 t_token_generation=20327.093 t_total=23613.969
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380610 id_slot=0 id_task=1102 n_ctx=512 n_past=166 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380610
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380610 remote_addr="127.0.0.1" remote_port=48114 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380610 id_slot=0 id_task=1231
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380610 id_slot=0 id_task=1231 p0=0
+INFO [           print_timings] prompt eval time     =    2862.00 ms /    33 tokens (   86.73 ms per token,    11.53 tokens per second) | tid="1995896992" timestamp=1794380621 id_slot=0 id_task=1231 t_prompt_processing=2861.997 n_prompt_tokens_processed=33 t_token=86.72718181818182 n_tokens_second=11.53041040923523
+INFO [           print_timings] generation eval time =    7346.89 ms /    49 runs   (  149.94 ms per token,     6.67 tokens per second) | tid="1995896992" timestamp=1794380621 id_slot=0 id_task=1231 t_token_generation=7346.887 n_decoded=49 t_token=149.9364693877551 n_tokens_second=6.669491445832773
+INFO [           print_timings]           total time =   10208.88 ms | tid="1995896992" timestamp=1794380621 id_slot=0 id_task=1231 t_prompt_processing=2861.997 t_token_generation=7346.887 t_total=10208.884
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380621 id_slot=0 id_task=1231 n_ctx=512 n_past=81 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380621
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380621 remote_addr="127.0.0.1" remote_port=48116 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380621 id_slot=0 id_task=1281
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380621 id_slot=0 id_task=1281 p0=0
+INFO [           print_timings] prompt eval time     =    3627.66 ms /    42 tokens (   86.37 ms per token,    11.58 tokens per second) | tid="1995896992" timestamp=1794380645 id_slot=0 id_task=1281 t_prompt_processing=3627.66 n_prompt_tokens_processed=42 t_token=86.37285714285714 n_tokens_second=11.577711251881379
+INFO [           print_timings] generation eval time =   20822.66 ms /   128 runs   (  162.68 ms per token,     6.15 tokens per second) | tid="1995896992" timestamp=1794380645 id_slot=0 id_task=1281 t_token_generation=20822.664 n_decoded=128 t_token=162.6770625 n_tokens_second=6.147148126675818
+INFO [           print_timings]           total time =   24450.32 ms | tid="1995896992" timestamp=1794380645 id_slot=0 id_task=1281 t_prompt_processing=3627.66 t_token_generation=20822.664 t_total=24450.324
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380645 id_slot=0 id_task=1281 n_ctx=512 n_past=169 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380645
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380645 remote_addr="127.0.0.1" remote_port=48118 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380645 id_slot=0 id_task=1410
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380645 id_slot=0 id_task=1410 p0=0
+INFO [           print_timings] prompt eval time     =    3376.44 ms /    39 tokens (   86.58 ms per token,    11.55 tokens per second) | tid="1995896992" timestamp=1794380669 id_slot=0 id_task=1410 t_prompt_processing=3376.44 n_prompt_tokens_processed=39 t_token=86.57538461538462 n_tokens_second=11.550627287912713
+INFO [           print_timings] generation eval time =   20775.08 ms /   128 runs   (  162.31 ms per token,     6.16 tokens per second) | tid="1995896992" timestamp=1794380669 id_slot=0 id_task=1410 t_token_generation=20775.079 n_decoded=128 t_token=162.3053046875 n_tokens_second=6.161228075233793
+INFO [           print_timings]           total time =   24151.52 ms | tid="1995896992" timestamp=1794380669 id_slot=0 id_task=1410 t_prompt_processing=3376.44 t_token_generation=20775.079 t_total=24151.519
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380669 remote_addr="127.0.0.1" remote_port=48120 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380669 id_slot=0 id_task=1410 n_ctx=512 n_past=166 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380669
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380669 id_slot=0 id_task=1539
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380669 id_slot=0 id_task=1539 p0=0
+INFO [           print_timings] prompt eval time     =    2868.32 ms /    33 tokens (   86.92 ms per token,    11.50 tokens per second) | tid="1995896992" timestamp=1794380693 id_slot=0 id_task=1539 t_prompt_processing=2868.319 n_prompt_tokens_processed=33 t_token=86.91875757575758 n_tokens_second=11.504996480516986
+INFO [           print_timings] generation eval time =   20745.56 ms /   128 runs   (  162.07 ms per token,     6.17 tokens per second) | tid="1995896992" timestamp=1794380693 id_slot=0 id_task=1539 t_token_generation=20745.565 n_decoded=128 t_token=162.0747265625 n_tokens_second=6.1699934419718145
+INFO [           print_timings]           total time =   23613.88 ms | tid="1995896992" timestamp=1794380693 id_slot=0 id_task=1539 t_prompt_processing=2868.319 t_token_generation=20745.565 t_total=23613.884
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380693 id_slot=0 id_task=1539 n_ctx=512 n_past=160 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380693
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380693 remote_addr="127.0.0.1" remote_port=48122 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380693 id_slot=0 id_task=1668
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380693 id_slot=0 id_task=1668 p0=0
+INFO [           print_timings] prompt eval time     =    3451.30 ms /    40 tokens (   86.28 ms per token,    11.59 tokens per second) | tid="1995896992" timestamp=1794380717 id_slot=0 id_task=1668 t_prompt_processing=3451.302 n_prompt_tokens_processed=40 t_token=86.28255 n_tokens_second=11.58982899786805
+INFO [           print_timings] generation eval time =   20829.52 ms /   128 runs   (  162.73 ms per token,     6.15 tokens per second) | tid="1995896992" timestamp=1794380717 id_slot=0 id_task=1668 t_token_generation=20829.517 n_decoded=128 t_token=162.7306015625 n_tokens_second=6.14512568870416
+INFO [           print_timings]           total time =   24280.82 ms | tid="1995896992" timestamp=1794380717 id_slot=0 id_task=1668 t_prompt_processing=3451.302 t_token_generation=20829.517 t_total=24280.819
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380717 id_slot=0 id_task=1668 n_ctx=512 n_past=167 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380717
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380717 remote_addr="127.0.0.1" remote_port=48124 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380717 id_slot=0 id_task=1797
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380717 id_slot=0 id_task=1797 p0=0
+INFO [           print_timings] prompt eval time     =    3277.29 ms /    38 tokens (   86.24 ms per token,    11.59 tokens per second) | tid="1995896992" timestamp=1794380741 id_slot=0 id_task=1797 t_prompt_processing=3277.2870000000003 n_prompt_tokens_processed=38 t_token=86.24439473684211 n_tokens_second=11.594956438053792
+INFO [           print_timings] generation eval time =   20859.44 ms /   128 runs   (  162.96 ms per token,     6.14 tokens per second) | tid="1995896992" timestamp=1794380741 id_slot=0 id_task=1797 t_token_generation=20859.443 n_decoded=128 t_token=162.9643984375 n_tokens_second=6.136309584105386
+INFO [           print_timings]           total time =   24136.73 ms | tid="1995896992" timestamp=1794380741 id_slot=0 id_task=1797 t_prompt_processing=3277.2870000000003 t_token_generation=20859.443 t_total=24136.73
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380741 id_slot=0 id_task=1797 n_ctx=512 n_past=165 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380741
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380741 remote_addr="127.0.0.1" remote_port=48126 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380741 id_slot=0 id_task=1926
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380741 id_slot=0 id_task=1926 p0=0
+INFO [           print_timings] prompt eval time     =    2773.44 ms /    32 tokens (   86.67 ms per token,    11.54 tokens per second) | tid="1995896992" timestamp=1794380761 id_slot=0 id_task=1926 t_prompt_processing=2773.436 n_prompt_tokens_processed=32 t_token=86.669875 n_tokens_second=11.538034409303117
+INFO [           print_timings] generation eval time =   17490.11 ms /   109 runs   (  160.46 ms per token,     6.23 tokens per second) | tid="1995896992" timestamp=1794380761 id_slot=0 id_task=1926 t_token_generation=17490.11 n_decoded=109 t_token=160.4597247706422 n_tokens_second=6.232093451670687
+INFO [           print_timings]           total time =   20263.55 ms | tid="1995896992" timestamp=1794380761 id_slot=0 id_task=1926 t_prompt_processing=2773.436 t_token_generation=17490.11 t_total=20263.546000000002
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380761 id_slot=0 id_task=1926 n_ctx=512 n_past=140 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380761
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380761 remote_addr="127.0.0.1" remote_port=48128 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380761 id_slot=0 id_task=2036
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380761 id_slot=0 id_task=2036 p0=0
+INFO [           print_timings] prompt eval time     =    3288.39 ms /    38 tokens (   86.54 ms per token,    11.56 tokens per second) | tid="1995896992" timestamp=1794380776 id_slot=0 id_task=2036 t_prompt_processing=3288.391 n_prompt_tokens_processed=38 t_token=86.5366052631579 n_tokens_second=11.55580343091804
+INFO [           print_timings] generation eval time =   11037.19 ms /    70 runs   (  157.67 ms per token,     6.34 tokens per second) | tid="1995896992" timestamp=1794380776 id_slot=0 id_task=2036 t_token_generation=11037.195 n_decoded=70 t_token=157.67421428571427 n_tokens_second=6.342191109244695
+INFO [           print_timings]           total time =   14325.59 ms | tid="1995896992" timestamp=1794380776 id_slot=0 id_task=2036 t_prompt_processing=3288.391 t_token_generation=11037.195 t_total=14325.586
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380776 id_slot=0 id_task=2036 n_ctx=512 n_past=107 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380776
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380776 remote_addr="127.0.0.1" remote_port=48130 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380776 id_slot=0 id_task=2107
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380776 id_slot=0 id_task=2107 p0=0
+INFO [           print_timings] prompt eval time     =    3353.63 ms /    39 tokens (   85.99 ms per token,    11.63 tokens per second) | tid="1995896992" timestamp=1794380800 id_slot=0 id_task=2107 t_prompt_processing=3353.6330000000003 n_prompt_tokens_processed=39 t_token=85.99058974358975 n_tokens_second=11.629179460006505
+INFO [           print_timings] generation eval time =   20798.06 ms /   128 runs   (  162.48 ms per token,     6.15 tokens per second) | tid="1995896992" timestamp=1794380800 id_slot=0 id_task=2107 t_token_generation=20798.057 n_decoded=128 t_token=162.4848203125 n_tokens_second=6.154421059621098
+INFO [           print_timings]           total time =   24151.69 ms | tid="1995896992" timestamp=1794380800 id_slot=0 id_task=2107 t_prompt_processing=3353.6330000000003 t_token_generation=20798.057 t_total=24151.690000000002
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380800 id_slot=0 id_task=2107 n_ctx=512 n_past=166 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380800
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380800 remote_addr="127.0.0.1" remote_port=48132 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380800 id_slot=0 id_task=2236
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380800 id_slot=0 id_task=2236 p0=0
+INFO [           print_timings] prompt eval time     =    2793.25 ms /    32 tokens (   87.29 ms per token,    11.46 tokens per second) | tid="1995896992" timestamp=1794380824 id_slot=0 id_task=2236 t_prompt_processing=2793.252 n_prompt_tokens_processed=32 t_token=87.289125 n_tokens_second=11.456180824358132
+INFO [           print_timings] generation eval time =   20744.29 ms /   128 runs   (  162.06 ms per token,     6.17 tokens per second) | tid="1995896992" timestamp=1794380824 id_slot=0 id_task=2236 t_token_generation=20744.293 n_decoded=128 t_token=162.0647890625 n_tokens_second=6.170371774058532
+INFO [           print_timings]           total time =   23537.55 ms | tid="1995896992" timestamp=1794380824 id_slot=0 id_task=2236 t_prompt_processing=2793.252 t_token_generation=20744.293 t_total=23537.545000000002
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380824 id_slot=0 id_task=2236 n_ctx=512 n_past=159 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380824
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380824 remote_addr="127.0.0.1" remote_port=48134 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380824 id_slot=0 id_task=2365
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380824 id_slot=0 id_task=2365 p0=0
+INFO [           print_timings] prompt eval time     =    3538.08 ms /    41 tokens (   86.29 ms per token,    11.59 tokens per second) | tid="1995896992" timestamp=1794380846 id_slot=0 id_task=2365 t_prompt_processing=3538.077 n_prompt_tokens_processed=41 t_token=86.29456097560976 n_tokens_second=11.588215858501664
+INFO [           print_timings] generation eval time =   19154.54 ms /   118 runs   (  162.33 ms per token,     6.16 tokens per second) | tid="1995896992" timestamp=1794380846 id_slot=0 id_task=2365 t_token_generation=19154.542 n_decoded=118 t_token=162.32662711864407 n_tokens_second=6.160418766473246
+INFO [           print_timings]           total time =   22692.62 ms | tid="1995896992" timestamp=1794380846 id_slot=0 id_task=2365 t_prompt_processing=3538.077 t_token_generation=19154.542 t_total=22692.619000000002
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380846 id_slot=0 id_task=2365 n_ctx=512 n_past=158 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380846
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380846 remote_addr="127.0.0.1" remote_port=48136 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380846 id_slot=0 id_task=2484
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380846 id_slot=0 id_task=2484 p0=0
+INFO [           print_timings] prompt eval time     =    3299.15 ms /    38 tokens (   86.82 ms per token,    11.52 tokens per second) | tid="1995896992" timestamp=1794380870 id_slot=0 id_task=2484 t_prompt_processing=3299.149 n_prompt_tokens_processed=38 t_token=86.81971052631579 n_tokens_second=11.518121794438505
+INFO [           print_timings] generation eval time =   20851.83 ms /   128 runs   (  162.90 ms per token,     6.14 tokens per second) | tid="1995896992" timestamp=1794380870 id_slot=0 id_task=2484 t_token_generation=20851.833 n_decoded=128 t_token=162.9049453125 n_tokens_second=6.138549066645604
+INFO [           print_timings]           total time =   24150.98 ms | tid="1995896992" timestamp=1794380870 id_slot=0 id_task=2484 t_prompt_processing=3299.149 t_token_generation=20851.833 t_total=24150.982
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380870 id_slot=0 id_task=2484 n_ctx=512 n_past=165 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380870
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380870 remote_addr="127.0.0.1" remote_port=48138 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380870 id_slot=0 id_task=2613
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380870 id_slot=0 id_task=2613 p0=0
+INFO [           print_timings] prompt eval time     =    2854.15 ms /    33 tokens (   86.49 ms per token,    11.56 tokens per second) | tid="1995896992" timestamp=1794380894 id_slot=0 id_task=2613 t_prompt_processing=2854.151 n_prompt_tokens_processed=33 t_token=86.48942424242423 n_tokens_second=11.562107260617957
+INFO [           print_timings] generation eval time =   20722.70 ms /   128 runs   (  161.90 ms per token,     6.18 tokens per second) | tid="1995896992" timestamp=1794380894 id_slot=0 id_task=2613 t_token_generation=20722.703 n_decoded=128 t_token=161.8961171875 n_tokens_second=6.17680039133891
+INFO [           print_timings]           total time =   23576.85 ms | tid="1995896992" timestamp=1794380894 id_slot=0 id_task=2613 t_prompt_processing=2854.151 t_token_generation=20722.703 t_total=23576.854
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380894 id_slot=0 id_task=2613 n_ctx=512 n_past=160 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380894
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380894 remote_addr="127.0.0.1" remote_port=48140 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380894 id_slot=0 id_task=2742
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380894 id_slot=0 id_task=2742 p0=0
+INFO [           print_timings] prompt eval time     =    3486.18 ms /    40 tokens (   87.15 ms per token,    11.47 tokens per second) | tid="1995896992" timestamp=1794380918 id_slot=0 id_task=2742 t_prompt_processing=3486.1800000000003 n_prompt_tokens_processed=40 t_token=87.15450000000001 n_tokens_second=11.473876850879758
+INFO [           print_timings] generation eval time =   20802.01 ms /   128 runs   (  162.52 ms per token,     6.15 tokens per second) | tid="1995896992" timestamp=1794380918 id_slot=0 id_task=2742 t_token_generation=20802.008 n_decoded=128 t_token=162.5156875 n_tokens_second=6.153252128352224
+INFO [           print_timings]           total time =   24288.19 ms | tid="1995896992" timestamp=1794380918 id_slot=0 id_task=2742 t_prompt_processing=3486.1800000000003 t_token_generation=20802.008 t_total=24288.188000000002
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380918 remote_addr="127.0.0.1" remote_port=48142 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380918 id_slot=0 id_task=2742 n_ctx=512 n_past=167 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380918
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380918 id_slot=0 id_task=2871
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380918 id_slot=0 id_task=2871 p0=0
+INFO [           print_timings] prompt eval time     =    3286.17 ms /    38 tokens (   86.48 ms per token,    11.56 tokens per second) | tid="1995896992" timestamp=1794380942 id_slot=0 id_task=2871 t_prompt_processing=3286.167 n_prompt_tokens_processed=38 t_token=86.47807894736842 n_tokens_second=11.563624125006427
+INFO [           print_timings] generation eval time =   20816.41 ms /   128 runs   (  162.63 ms per token,     6.15 tokens per second) | tid="1995896992" timestamp=1794380942 id_slot=0 id_task=2871 t_token_generation=20816.41 n_decoded=128 t_token=162.628203125 n_tokens_second=6.148994951579067
+INFO [           print_timings]           total time =   24102.58 ms | tid="1995896992" timestamp=1794380942 id_slot=0 id_task=2871 t_prompt_processing=3286.167 t_token_generation=20816.41 t_total=24102.577
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794380942 remote_addr="127.0.0.1" remote_port=48144 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380942 id_slot=0 id_task=2871 n_ctx=512 n_past=165 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380942
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380942 id_slot=0 id_task=3000
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380942 id_slot=0 id_task=3000 p0=0
+INFO [           print_timings] prompt eval time     =    2773.38 ms /    32 tokens (   86.67 ms per token,    11.54 tokens per second) | tid="1995896992" timestamp=1794380966 id_slot=0 id_task=3000 t_prompt_processing=2773.381 n_prompt_tokens_processed=32 t_token=86.66815625 n_tokens_second=11.538263224562368
+INFO [           print_timings] generation eval time =   20727.45 ms /   128 runs   (  161.93 ms per token,     6.18 tokens per second) | tid="1995896992" timestamp=1794380966 id_slot=0 id_task=3000 t_token_generation=20727.447 n_decoded=128 t_token=161.9331796875 n_tokens_second=6.17538667449011
+INFO [           print_timings]           total time =   23500.83 ms | tid="1995896992" timestamp=1794380966 id_slot=0 id_task=3000 t_prompt_processing=2773.381 t_token_generation=20727.447 t_total=23500.828
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380966 id_slot=0 id_task=3000 n_ctx=512 n_past=159 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380966
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794380966 remote_addr="127.0.0.1" remote_port=48146 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380966 id_slot=0 id_task=3129
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380966 id_slot=0 id_task=3129 p0=0
+INFO [           print_timings] prompt eval time     =    3440.43 ms /    40 tokens (   86.01 ms per token,    11.63 tokens per second) | tid="1995896992" timestamp=1794380990 id_slot=0 id_task=3129 t_prompt_processing=3440.433 n_prompt_tokens_processed=40 t_token=86.010825 n_tokens_second=11.626443531962401
+INFO [           print_timings] generation eval time =   20889.27 ms /   128 runs   (  163.20 ms per token,     6.13 tokens per second) | tid="1995896992" timestamp=1794380990 id_slot=0 id_task=3129 t_token_generation=20889.271 n_decoded=128 t_token=163.1974296875 n_tokens_second=6.127547485979764
+INFO [           print_timings]           total time =   24329.70 ms | tid="1995896992" timestamp=1794380990 id_slot=0 id_task=3129 t_prompt_processing=3440.433 t_token_generation=20889.271 t_total=24329.704
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794380990 id_slot=0 id_task=3129 n_ctx=512 n_past=167 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794380990
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794380990 remote_addr="127.0.0.1" remote_port=48148 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794380990 id_slot=0 id_task=3258
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794380990 id_slot=0 id_task=3258 p0=0
+INFO [           print_timings] prompt eval time     =    3389.25 ms /    39 tokens (   86.90 ms per token,    11.51 tokens per second) | tid="1995896992" timestamp=1794381014 id_slot=0 id_task=3258 t_prompt_processing=3389.246 n_prompt_tokens_processed=39 t_token=86.9037435897436 n_tokens_second=11.506984149276859
+INFO [           print_timings] generation eval time =   20826.21 ms /   128 runs   (  162.70 ms per token,     6.15 tokens per second) | tid="1995896992" timestamp=1794381014 id_slot=0 id_task=3258 t_token_generation=20826.211 n_decoded=128 t_token=162.7047734375 n_tokens_second=6.146101179902576
+INFO [           print_timings]           total time =   24215.46 ms | tid="1995896992" timestamp=1794381014 id_slot=0 id_task=3258 t_prompt_processing=3389.246 t_token_generation=20826.211 t_total=24215.457
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381014 id_slot=0 id_task=3258 n_ctx=512 n_past=166 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381014
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381014 remote_addr="127.0.0.1" remote_port=48150 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381014 id_slot=0 id_task=3387
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381014 id_slot=0 id_task=3387 p0=0
+INFO [           print_timings] prompt eval time     =    2864.95 ms /    33 tokens (   86.82 ms per token,    11.52 tokens per second) | tid="1995896992" timestamp=1794381038 id_slot=0 id_task=3387 t_prompt_processing=2864.947 n_prompt_tokens_processed=33 t_token=86.81657575757576 n_tokens_second=11.518537690226031
+INFO [           print_timings] generation eval time =   20665.49 ms /   128 runs   (  161.45 ms per token,     6.19 tokens per second) | tid="1995896992" timestamp=1794381038 id_slot=0 id_task=3387 t_token_generation=20665.49 n_decoded=128 t_token=161.449140625 n_tokens_second=6.193901039849527
+INFO [           print_timings]           total time =   23530.44 ms | tid="1995896992" timestamp=1794381038 id_slot=0 id_task=3387 t_prompt_processing=2864.947 t_token_generation=20665.49 t_total=23530.437
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381038 remote_addr="127.0.0.1" remote_port=48152 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381038 id_slot=0 id_task=3387 n_ctx=512 n_past=160 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381038
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381038 id_slot=0 id_task=3516
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381038 id_slot=0 id_task=3516 p0=0
+INFO [           print_timings] prompt eval time     =    3713.82 ms /    43 tokens (   86.37 ms per token,    11.58 tokens per second) | tid="1995896992" timestamp=1794381063 id_slot=0 id_task=3516 t_prompt_processing=3713.815 n_prompt_tokens_processed=43 t_token=86.36779069767442 n_tokens_second=11.578390415246854
+INFO [           print_timings] generation eval time =   20793.52 ms /   128 runs   (  162.45 ms per token,     6.16 tokens per second) | tid="1995896992" timestamp=1794381063 id_slot=0 id_task=3516 t_token_generation=20793.52 n_decoded=128 t_token=162.449375 n_tokens_second=6.155763911064601
+INFO [           print_timings]           total time =   24507.33 ms | tid="1995896992" timestamp=1794381063 id_slot=0 id_task=3516 t_prompt_processing=3713.815 t_token_generation=20793.52 t_total=24507.335
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381063 remote_addr="127.0.0.1" remote_port=48154 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381063 id_slot=0 id_task=3516 n_ctx=512 n_past=170 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381063
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381063 id_slot=0 id_task=3645
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381063 id_slot=0 id_task=3645 p0=0
+INFO [           print_timings] prompt eval time     =    3458.68 ms /    40 tokens (   86.47 ms per token,    11.57 tokens per second) | tid="1995896992" timestamp=1794381087 id_slot=0 id_task=3645 t_prompt_processing=3458.676 n_prompt_tokens_processed=40 t_token=86.4669 n_tokens_second=11.565119138074802
+INFO [           print_timings] generation eval time =   20839.71 ms /   128 runs   (  162.81 ms per token,     6.14 tokens per second) | tid="1995896992" timestamp=1794381087 id_slot=0 id_task=3645 t_token_generation=20839.714 n_decoded=128 t_token=162.810265625 n_tokens_second=6.142118840978336
+INFO [           print_timings]           total time =   24298.39 ms | tid="1995896992" timestamp=1794381087 id_slot=0 id_task=3645 t_prompt_processing=3458.676 t_token_generation=20839.714 t_total=24298.39
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381087 id_slot=0 id_task=3645 n_ctx=512 n_past=167 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381087
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381087 remote_addr="127.0.0.1" remote_port=48156 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381087 id_slot=0 id_task=3774
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381087 id_slot=0 id_task=3774 p0=0
+INFO [           print_timings] prompt eval time     =    2752.96 ms /    32 tokens (   86.03 ms per token,    11.62 tokens per second) | tid="1995896992" timestamp=1794381110 id_slot=0 id_task=3774 t_prompt_processing=2752.9610000000002 n_prompt_tokens_processed=32 t_token=86.03003125000001 n_tokens_second=11.62384792229167
+INFO [           print_timings] generation eval time =   20675.55 ms /   128 runs   (  161.53 ms per token,     6.19 tokens per second) | tid="1995896992" timestamp=1794381110 id_slot=0 id_task=3774 t_token_generation=20675.553 n_decoded=128 t_token=161.5277578125 n_tokens_second=6.190886405795289
+INFO [           print_timings]           total time =   23428.51 ms | tid="1995896992" timestamp=1794381110 id_slot=0 id_task=3774 t_prompt_processing=2752.9610000000002 t_token_generation=20675.553 t_total=23428.514
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381110 id_slot=0 id_task=3774 n_ctx=512 n_past=159 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381110
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381110 remote_addr="127.0.0.1" remote_port=48158 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381110 id_slot=0 id_task=3903
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381110 id_slot=0 id_task=3903 p0=0
+INFO [           print_timings] prompt eval time     =    3396.72 ms /    39 tokens (   87.10 ms per token,    11.48 tokens per second) | tid="1995896992" timestamp=1794381134 id_slot=0 id_task=3903 t_prompt_processing=3396.7200000000003 n_prompt_tokens_processed=39 t_token=87.09538461538462 n_tokens_second=11.48166466473539
+INFO [           print_timings] generation eval time =   20733.28 ms /   128 runs   (  161.98 ms per token,     6.17 tokens per second) | tid="1995896992" timestamp=1794381134 id_slot=0 id_task=3903 t_token_generation=20733.277000000002 n_decoded=128 t_token=161.97872656250001 n_tokens_second=6.173650214580165
+INFO [           print_timings]           total time =   24130.00 ms | tid="1995896992" timestamp=1794381134 id_slot=0 id_task=3903 t_prompt_processing=3396.7200000000003 t_token_generation=20733.277000000002 t_total=24129.997000000003
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381134 id_slot=0 id_task=3903 n_ctx=512 n_past=166 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381134
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381134 remote_addr="127.0.0.1" remote_port=48160 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381134 id_slot=0 id_task=4032
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381134 id_slot=0 id_task=4032 p0=0
+INFO [           print_timings] prompt eval time     =    3384.99 ms /    39 tokens (   86.79 ms per token,    11.52 tokens per second) | tid="1995896992" timestamp=1794381146 id_slot=0 id_task=4032 t_prompt_processing=3384.995 n_prompt_tokens_processed=39 t_token=86.79474358974359 n_tokens_second=11.521435039047326
+INFO [           print_timings] generation eval time =    8329.87 ms /    53 runs   (  157.17 ms per token,     6.36 tokens per second) | tid="1995896992" timestamp=1794381146 id_slot=0 id_task=4032 t_token_generation=8329.871000000001 n_decoded=53 t_token=157.1673773584906 n_tokens_second=6.362643551142628
+INFO [           print_timings]           total time =   11714.87 ms | tid="1995896992" timestamp=1794381146 id_slot=0 id_task=4032 t_prompt_processing=3384.995 t_token_generation=8329.871000000001 t_total=11714.866000000002
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381146 id_slot=0 id_task=4032 n_ctx=512 n_past=91 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381146
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381146 remote_addr="127.0.0.1" remote_port=48162 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381146 id_slot=0 id_task=4086
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381146 id_slot=0 id_task=4086 p0=0
+INFO [           print_timings] prompt eval time     =    2867.30 ms /    33 tokens (   86.89 ms per token,    11.51 tokens per second) | tid="1995896992" timestamp=1794381170 id_slot=0 id_task=4086 t_prompt_processing=2867.3 n_prompt_tokens_processed=33 t_token=86.88787878787879 n_tokens_second=11.50908520210651
+INFO [           print_timings] generation eval time =   20703.22 ms /   128 runs   (  161.74 ms per token,     6.18 tokens per second) | tid="1995896992" timestamp=1794381170 id_slot=0 id_task=4086 t_token_generation=20703.217 n_decoded=128 t_token=161.7438828125 n_tokens_second=6.182614035297027
+INFO [           print_timings]           total time =   23570.52 ms | tid="1995896992" timestamp=1794381170 id_slot=0 id_task=4086 t_prompt_processing=2867.3 t_token_generation=20703.217 t_total=23570.517
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381170 remote_addr="127.0.0.1" remote_port=48164 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381170 id_slot=0 id_task=4086 n_ctx=512 n_past=160 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381170
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381170 id_slot=0 id_task=4215
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381170 id_slot=0 id_task=4215 p0=0
+INFO [           print_timings] prompt eval time     =    3377.26 ms /    39 tokens (   86.60 ms per token,    11.55 tokens per second) | tid="1995896992" timestamp=1794381194 id_slot=0 id_task=4215 t_prompt_processing=3377.264 n_prompt_tokens_processed=39 t_token=86.59651282051283 n_tokens_second=11.547809114123147
+INFO [           print_timings] generation eval time =   20732.33 ms /   128 runs   (  161.97 ms per token,     6.17 tokens per second) | tid="1995896992" timestamp=1794381194 id_slot=0 id_task=4215 t_token_generation=20732.335 n_decoded=128 t_token=161.9713671875 n_tokens_second=6.173930722226898
+INFO [           print_timings]           total time =   24109.60 ms | tid="1995896992" timestamp=1794381194 id_slot=0 id_task=4215 t_prompt_processing=3377.264 t_token_generation=20732.335 t_total=24109.599
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381194 id_slot=0 id_task=4215 n_ctx=512 n_past=166 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381194
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381194 remote_addr="127.0.0.1" remote_port=48166 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381194 id_slot=0 id_task=4344
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381194 id_slot=0 id_task=4344 p0=0
+INFO [           print_timings] prompt eval time     =    3466.64 ms /    40 tokens (   86.67 ms per token,    11.54 tokens per second) | tid="1995896992" timestamp=1794381218 id_slot=0 id_task=4344 t_prompt_processing=3466.636 n_prompt_tokens_processed=40 t_token=86.6659 n_tokens_second=11.5385636103704
+INFO [           print_timings] generation eval time =   20820.99 ms /   128 runs   (  162.66 ms per token,     6.15 tokens per second) | tid="1995896992" timestamp=1794381218 id_slot=0 id_task=4344 t_token_generation=20820.987 n_decoded=128 t_token=162.6639609375 n_tokens_second=6.147643240928011
+INFO [           print_timings]           total time =   24287.62 ms | tid="1995896992" timestamp=1794381218 id_slot=0 id_task=4344 t_prompt_processing=3466.636 t_token_generation=20820.987 t_total=24287.623
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381218 remote_addr="127.0.0.1" remote_port=48168 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381218 id_slot=0 id_task=4344 n_ctx=512 n_past=167 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381218
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381218 id_slot=0 id_task=4473
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381218 id_slot=0 id_task=4473 p0=0
+INFO [           print_timings] prompt eval time     =    2868.13 ms /    33 tokens (   86.91 ms per token,    11.51 tokens per second) | tid="1995896992" timestamp=1794381242 id_slot=0 id_task=4473 t_prompt_processing=2868.126 n_prompt_tokens_processed=33 t_token=86.9129090909091 n_tokens_second=11.505770666979064
+INFO [           print_timings] generation eval time =   20710.46 ms /   128 runs   (  161.80 ms per token,     6.18 tokens per second) | tid="1995896992" timestamp=1794381242 id_slot=0 id_task=4473 t_token_generation=20710.455 n_decoded=128 t_token=161.8004296875 n_tokens_second=6.18045330245038
+INFO [           print_timings]           total time =   23578.58 ms | tid="1995896992" timestamp=1794381242 id_slot=0 id_task=4473 t_prompt_processing=2868.126 t_token_generation=20710.455 t_total=23578.581000000002
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381242 remote_addr="127.0.0.1" remote_port=48170 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381242 id_slot=0 id_task=4473 n_ctx=512 n_past=160 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381242
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381242 id_slot=0 id_task=4602
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381242 id_slot=0 id_task=4602 p0=0
+INFO [           print_timings] prompt eval time     =    3270.99 ms /    39 tokens (   83.87 ms per token,    11.92 tokens per second) | tid="1995896992" timestamp=1794381265 id_slot=0 id_task=4602 t_prompt_processing=3270.9880000000003 n_prompt_tokens_processed=39 t_token=83.87148717948719 n_tokens_second=11.923003080414846
+INFO [           print_timings] generation eval time =   20059.68 ms /   128 runs   (  156.72 ms per token,     6.38 tokens per second) | tid="1995896992" timestamp=1794381265 id_slot=0 id_task=4602 t_token_generation=20059.682 n_decoded=128 t_token=156.716265625 n_tokens_second=6.380958581496954
+INFO [           print_timings]           total time =   23330.67 ms | tid="1995896992" timestamp=1794381265 id_slot=0 id_task=4602 t_prompt_processing=3270.9880000000003 t_token_generation=20059.682 t_total=23330.670000000002
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381265 id_slot=0 id_task=4602 n_ctx=512 n_past=166 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381265
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381265 remote_addr="127.0.0.1" remote_port=48172 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381265 id_slot=0 id_task=4731
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381265 id_slot=0 id_task=4731 p0=0
+INFO [           print_timings] prompt eval time     =    3243.08 ms /    39 tokens (   83.16 ms per token,    12.03 tokens per second) | tid="1995896992" timestamp=1794381277 id_slot=0 id_task=4731 t_prompt_processing=3243.079 n_prompt_tokens_processed=39 t_token=83.1558717948718 n_tokens_second=12.025608996882283
+INFO [           print_timings] generation eval time =    8703.58 ms /    58 runs   (  150.06 ms per token,     6.66 tokens per second) | tid="1995896992" timestamp=1794381277 id_slot=0 id_task=4731 t_token_generation=8703.577 n_decoded=58 t_token=150.0616724137931 n_tokens_second=6.663926796993926
+INFO [           print_timings]           total time =   11946.66 ms | tid="1995896992" timestamp=1794381277 id_slot=0 id_task=4731 t_prompt_processing=3243.079 t_token_generation=8703.577 t_total=11946.655999999999
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381277 id_slot=0 id_task=4731 n_ctx=512 n_past=96 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381277
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381277 remote_addr="127.0.0.1" remote_port=48174 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381277 id_slot=0 id_task=4790
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381277 id_slot=0 id_task=4790 p0=0
+INFO [           print_timings] prompt eval time     =    2660.83 ms /    32 tokens (   83.15 ms per token,    12.03 tokens per second) | tid="1995896992" timestamp=1794381300 id_slot=0 id_task=4790 t_prompt_processing=2660.834 n_prompt_tokens_processed=32 t_token=83.1510625 n_tokens_second=12.02630453459329
+INFO [           print_timings] generation eval time =   20007.04 ms /   128 runs   (  156.30 ms per token,     6.40 tokens per second) | tid="1995896992" timestamp=1794381300 id_slot=0 id_task=4790 t_token_generation=20007.037 n_decoded=128 t_token=156.3049765625 n_tokens_second=6.397748952031228
+INFO [           print_timings]           total time =   22667.87 ms | tid="1995896992" timestamp=1794381300 id_slot=0 id_task=4790 t_prompt_processing=2660.834 t_token_generation=20007.037 t_total=22667.871
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381300 remote_addr="127.0.0.1" remote_port=48176 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381300 id_slot=0 id_task=4790 n_ctx=512 n_past=159 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381300
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381300 id_slot=0 id_task=4919
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381300 id_slot=0 id_task=4919 p0=0
+INFO [           print_timings] prompt eval time     =    3941.07 ms /    47 tokens (   83.85 ms per token,    11.93 tokens per second) | tid="1995896992" timestamp=1794381304 id_slot=0 id_task=4919 t_prompt_processing=3941.068 n_prompt_tokens_processed=47 t_token=83.85251063829787 n_tokens_second=11.92570135810902
+INFO [           print_timings] generation eval time =     352.27 ms /     3 runs   (  117.42 ms per token,     8.52 tokens per second) | tid="1995896992" timestamp=1794381304 id_slot=0 id_task=4919 t_token_generation=352.272 n_decoded=3 t_token=117.42399999999999 n_tokens_second=8.516146613980105
+INFO [           print_timings]           total time =    4293.34 ms | tid="1995896992" timestamp=1794381304 id_slot=0 id_task=4919 t_prompt_processing=3941.068 t_token_generation=352.272 t_total=4293.34
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381304 remote_addr="127.0.0.1" remote_port=48178 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381304 id_slot=0 id_task=4919 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381304
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381304 id_slot=0 id_task=4923
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381304 id_slot=0 id_task=4923 p0=0
+INFO [           print_timings] prompt eval time     =    3534.87 ms /    42 tokens (   84.16 ms per token,    11.88 tokens per second) | tid="1995896992" timestamp=1794381308 id_slot=0 id_task=4923 t_prompt_processing=3534.869 n_prompt_tokens_processed=42 t_token=84.16354761904762 n_tokens_second=11.881628428097335
+INFO [           print_timings] generation eval time =     463.80 ms /     4 runs   (  115.95 ms per token,     8.62 tokens per second) | tid="1995896992" timestamp=1794381308 id_slot=0 id_task=4923 t_token_generation=463.79900000000004 n_decoded=4 t_token=115.94975000000001 n_tokens_second=8.624425667153227
+INFO [           print_timings]           total time =    3998.67 ms | tid="1995896992" timestamp=1794381308 id_slot=0 id_task=4923 t_prompt_processing=3534.869 t_token_generation=463.79900000000004 t_total=3998.668
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381308 id_slot=0 id_task=4923 n_ctx=512 n_past=45 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381308
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381308 remote_addr="127.0.0.1" remote_port=48180 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381308 id_slot=0 id_task=4928
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381308 id_slot=0 id_task=4928 p0=0
+INFO [           print_timings] prompt eval time     =    6617.49 ms /    79 tokens (   83.77 ms per token,    11.94 tokens per second) | tid="1995896992" timestamp=1794381315 id_slot=0 id_task=4928 t_prompt_processing=6617.491 n_prompt_tokens_processed=79 t_token=83.76570886075949 n_tokens_second=11.938059303745181
+INFO [           print_timings] generation eval time =     291.41 ms /     3 runs   (   97.14 ms per token,    10.29 tokens per second) | tid="1995896992" timestamp=1794381315 id_slot=0 id_task=4928 t_token_generation=291.41 n_decoded=3 t_token=97.13666666666667 n_tokens_second=10.294773686558457
+INFO [           print_timings]           total time =    6908.90 ms | tid="1995896992" timestamp=1794381315 id_slot=0 id_task=4928 t_prompt_processing=6617.491 t_token_generation=291.41 t_total=6908.901
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381315 id_slot=0 id_task=4928 n_ctx=512 n_past=81 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381315
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381315 remote_addr="127.0.0.1" remote_port=48182 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381315 id_slot=0 id_task=4932
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381315 id_slot=0 id_task=4932 p0=0
+INFO [           print_timings] prompt eval time     =    3953.31 ms /    47 tokens (   84.11 ms per token,    11.89 tokens per second) | tid="1995896992" timestamp=1794381319 id_slot=0 id_task=4932 t_prompt_processing=3953.3070000000002 n_prompt_tokens_processed=47 t_token=84.11291489361703 n_tokens_second=11.888780709416192
+INFO [           print_timings] generation eval time =     284.02 ms /     3 runs   (   94.67 ms per token,    10.56 tokens per second) | tid="1995896992" timestamp=1794381319 id_slot=0 id_task=4932 t_token_generation=284.016 n_decoded=3 t_token=94.67200000000001 n_tokens_second=10.56278519520027
+INFO [           print_timings]           total time =    4237.32 ms | tid="1995896992" timestamp=1794381319 id_slot=0 id_task=4932 t_prompt_processing=3953.3070000000002 t_token_generation=284.016 t_total=4237.323
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381319 id_slot=0 id_task=4932 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381319
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381319 remote_addr="127.0.0.1" remote_port=48184 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381319 id_slot=0 id_task=4936
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381319 id_slot=0 id_task=4936 p0=0
+INFO [           print_timings] prompt eval time     =    3535.11 ms /    42 tokens (   84.17 ms per token,    11.88 tokens per second) | tid="1995896992" timestamp=1794381323 id_slot=0 id_task=4936 t_prompt_processing=3535.114 n_prompt_tokens_processed=42 t_token=84.16938095238095 n_tokens_second=11.880804975454822
+INFO [           print_timings] generation eval time =     263.55 ms /     3 runs   (   87.85 ms per token,    11.38 tokens per second) | tid="1995896992" timestamp=1794381323 id_slot=0 id_task=4936 t_token_generation=263.548 n_decoded=3 t_token=87.84933333333333 n_tokens_second=11.383125654529724
+INFO [           print_timings]           total time =    3798.66 ms | tid="1995896992" timestamp=1794381323 id_slot=0 id_task=4936 t_prompt_processing=3535.114 t_token_generation=263.548 t_total=3798.6620000000003
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381323 id_slot=0 id_task=4936 n_ctx=512 n_past=44 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381323
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381323 remote_addr="127.0.0.1" remote_port=48186 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381323 id_slot=0 id_task=4940
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381323 id_slot=0 id_task=4940 p0=0
+INFO [           print_timings] prompt eval time     =    6386.35 ms /    75 tokens (   85.15 ms per token,    11.74 tokens per second) | tid="1995896992" timestamp=1794381330 id_slot=0 id_task=4940 t_prompt_processing=6386.35 n_prompt_tokens_processed=75 t_token=85.15133333333334 n_tokens_second=11.743797317716693
+INFO [           print_timings] generation eval time =     263.11 ms /     3 runs   (   87.70 ms per token,    11.40 tokens per second) | tid="1995896992" timestamp=1794381330 id_slot=0 id_task=4940 t_token_generation=263.11400000000003 n_decoded=3 t_token=87.70466666666668 n_tokens_second=11.401901837226449
+INFO [           print_timings]           total time =    6649.46 ms | tid="1995896992" timestamp=1794381330 id_slot=0 id_task=4940 t_prompt_processing=6386.35 t_token_generation=263.11400000000003 t_total=6649.464
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381330 id_slot=0 id_task=4940 n_ctx=512 n_past=77 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381330
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381330 remote_addr="127.0.0.1" remote_port=48188 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381330 id_slot=0 id_task=4944
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381330 id_slot=0 id_task=4944 p0=0
+INFO [           print_timings] prompt eval time     =    3898.76 ms /    47 tokens (   82.95 ms per token,    12.06 tokens per second) | tid="1995896992" timestamp=1794381334 id_slot=0 id_task=4944 t_prompt_processing=3898.765 n_prompt_tokens_processed=47 t_token=82.95244680851063 n_tokens_second=12.05509949945688
+INFO [           print_timings] generation eval time =     291.78 ms /     3 runs   (   97.26 ms per token,    10.28 tokens per second) | tid="1995896992" timestamp=1794381334 id_slot=0 id_task=4944 t_token_generation=291.782 n_decoded=3 t_token=97.26066666666667 n_tokens_second=10.281648628085351
+INFO [           print_timings]           total time =    4190.55 ms | tid="1995896992" timestamp=1794381334 id_slot=0 id_task=4944 t_prompt_processing=3898.765 t_token_generation=291.782 t_total=4190.547
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381334 id_slot=0 id_task=4944 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381334
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381334 remote_addr="127.0.0.1" remote_port=48190 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381334 id_slot=0 id_task=4948
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381334 id_slot=0 id_task=4948 p0=0
+INFO [           print_timings] prompt eval time     =    3515.88 ms /    42 tokens (   83.71 ms per token,    11.95 tokens per second) | tid="1995896992" timestamp=1794381338 id_slot=0 id_task=4948 t_prompt_processing=3515.884 n_prompt_tokens_processed=42 t_token=83.71152380952381 n_tokens_second=11.945786607294211
+INFO [           print_timings] generation eval time =     281.71 ms /     3 runs   (   93.90 ms per token,    10.65 tokens per second) | tid="1995896992" timestamp=1794381338 id_slot=0 id_task=4948 t_token_generation=281.711 n_decoded=3 t_token=93.90366666666667 n_tokens_second=10.649211425893911
+INFO [           print_timings]           total time =    3797.60 ms | tid="1995896992" timestamp=1794381338 id_slot=0 id_task=4948 t_prompt_processing=3515.884 t_token_generation=281.711 t_total=3797.5950000000003
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381338 id_slot=0 id_task=4948 n_ctx=512 n_past=44 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381338
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381338 remote_addr="127.0.0.1" remote_port=48192 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381338 id_slot=0 id_task=4952
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381338 id_slot=0 id_task=4952 p0=0
+INFO [           print_timings] prompt eval time     =    6711.79 ms /    78 tokens (   86.05 ms per token,    11.62 tokens per second) | tid="1995896992" timestamp=1794381345 id_slot=0 id_task=4952 t_prompt_processing=6711.794 n_prompt_tokens_processed=78 t_token=86.04864102564102 n_tokens_second=11.621334027832201
+INFO [           print_timings] generation eval time =     292.99 ms /     3 runs   (   97.66 ms per token,    10.24 tokens per second) | tid="1995896992" timestamp=1794381345 id_slot=0 id_task=4952 t_token_generation=292.993 n_decoded=3 t_token=97.66433333333333 n_tokens_second=10.23915247121945
+INFO [           print_timings]           total time =    7004.79 ms | tid="1995896992" timestamp=1794381345 id_slot=0 id_task=4952 t_prompt_processing=6711.794 t_token_generation=292.993 t_total=7004.787
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381345 id_slot=0 id_task=4952 n_ctx=512 n_past=80 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381345
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381345 remote_addr="127.0.0.1" remote_port=48194 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381345 id_slot=0 id_task=4956
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381345 id_slot=0 id_task=4956 p0=0
+INFO [           print_timings] prompt eval time     =    4000.76 ms /    47 tokens (   85.12 ms per token,    11.75 tokens per second) | tid="1995896992" timestamp=1794381349 id_slot=0 id_task=4956 t_prompt_processing=4000.761 n_prompt_tokens_processed=47 t_token=85.1225744680851 n_tokens_second=11.747764987711088
+INFO [           print_timings] generation eval time =     214.39 ms /     3 runs   (   71.46 ms per token,    13.99 tokens per second) | tid="1995896992" timestamp=1794381349 id_slot=0 id_task=4956 t_token_generation=214.392 n_decoded=3 t_token=71.464 n_tokens_second=13.993059442516511
+INFO [           print_timings]           total time =    4215.15 ms | tid="1995896992" timestamp=1794381349 id_slot=0 id_task=4956 t_prompt_processing=4000.761 t_token_generation=214.392 t_total=4215.153
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381349 id_slot=0 id_task=4956 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381349
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381349 remote_addr="127.0.0.1" remote_port=48196 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381349 id_slot=0 id_task=4960
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381349 id_slot=0 id_task=4960 p0=0
+INFO [           print_timings] prompt eval time     =    3608.34 ms /    43 tokens (   83.91 ms per token,    11.92 tokens per second) | tid="1995896992" timestamp=1794381353 id_slot=0 id_task=4960 t_prompt_processing=3608.335 n_prompt_tokens_processed=43 t_token=83.91476744186046 n_tokens_second=11.916853618081468
+INFO [           print_timings] generation eval time =     338.10 ms /     3 runs   (  112.70 ms per token,     8.87 tokens per second) | tid="1995896992" timestamp=1794381353 id_slot=0 id_task=4960 t_token_generation=338.096 n_decoded=3 t_token=112.69866666666667 n_tokens_second=8.873219440632246
+INFO [           print_timings]           total time =    3946.43 ms | tid="1995896992" timestamp=1794381353 id_slot=0 id_task=4960 t_prompt_processing=3608.335 t_token_generation=338.096 t_total=3946.431
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381353 id_slot=0 id_task=4960 n_ctx=512 n_past=45 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381353
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381353 remote_addr="127.0.0.1" remote_port=48198 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381353 id_slot=0 id_task=4964
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381353 id_slot=0 id_task=4964 p0=0
+INFO [           print_timings] prompt eval time     =    6296.27 ms /    75 tokens (   83.95 ms per token,    11.91 tokens per second) | tid="1995896992" timestamp=1794381359 id_slot=0 id_task=4964 t_prompt_processing=6296.273 n_prompt_tokens_processed=75 t_token=83.95030666666666 n_tokens_second=11.911808779574837
+INFO [           print_timings] generation eval time =     289.25 ms /     3 runs   (   96.42 ms per token,    10.37 tokens per second) | tid="1995896992" timestamp=1794381359 id_slot=0 id_task=4964 t_token_generation=289.248 n_decoded=3 t_token=96.416 n_tokens_second=10.371722535678726
+INFO [           print_timings]           total time =    6585.52 ms | tid="1995896992" timestamp=1794381359 id_slot=0 id_task=4964 t_prompt_processing=6296.273 t_token_generation=289.248 t_total=6585.521
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381359 id_slot=0 id_task=4964 n_ctx=512 n_past=77 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381359
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381359 remote_addr="127.0.0.1" remote_port=48200 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381359 id_slot=0 id_task=4968
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381359 id_slot=0 id_task=4968 p0=0
+INFO [           print_timings] prompt eval time     =    3951.29 ms /    47 tokens (   84.07 ms per token,    11.89 tokens per second) | tid="1995896992" timestamp=1794381364 id_slot=0 id_task=4968 t_prompt_processing=3951.292 n_prompt_tokens_processed=47 t_token=84.07004255319148 n_tokens_second=11.894843509414136
+INFO [           print_timings] generation eval time =     284.34 ms /     3 runs   (   94.78 ms per token,    10.55 tokens per second) | tid="1995896992" timestamp=1794381364 id_slot=0 id_task=4968 t_token_generation=284.343 n_decoded=3 t_token=94.781 n_tokens_second=10.550637786054168
+INFO [           print_timings]           total time =    4235.64 ms | tid="1995896992" timestamp=1794381364 id_slot=0 id_task=4968 t_prompt_processing=3951.292 t_token_generation=284.343 t_total=4235.635
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381364 id_slot=0 id_task=4968 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381364
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381364 remote_addr="127.0.0.1" remote_port=48202 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381364 id_slot=0 id_task=4972
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381364 id_slot=0 id_task=4972 p0=0
+INFO [           print_timings] prompt eval time     =    3676.80 ms /    44 tokens (   83.56 ms per token,    11.97 tokens per second) | tid="1995896992" timestamp=1794381368 id_slot=0 id_task=4972 t_prompt_processing=3676.804 n_prompt_tokens_processed=44 t_token=83.56372727272728 n_tokens_second=11.966914744435655
+INFO [           print_timings] generation eval time =     337.07 ms /     3 runs   (  112.36 ms per token,     8.90 tokens per second) | tid="1995896992" timestamp=1794381368 id_slot=0 id_task=4972 t_token_generation=337.067 n_decoded=3 t_token=112.35566666666666 n_tokens_second=8.900307653967905
+INFO [           print_timings]           total time =    4013.87 ms | tid="1995896992" timestamp=1794381368 id_slot=0 id_task=4972 t_prompt_processing=3676.804 t_token_generation=337.067 t_total=4013.871
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381368 id_slot=0 id_task=4972 n_ctx=512 n_past=46 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381368
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381368 remote_addr="127.0.0.1" remote_port=48204 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381368 id_slot=0 id_task=4976
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381368 id_slot=0 id_task=4976 p0=0
+INFO [           print_timings] prompt eval time     =    6483.16 ms /    77 tokens (   84.20 ms per token,    11.88 tokens per second) | tid="1995896992" timestamp=1794381375 id_slot=0 id_task=4976 t_prompt_processing=6483.161 n_prompt_tokens_processed=77 t_token=84.19689610389611 n_tokens_second=11.876922384003729
+INFO [           print_timings] generation eval time =     302.25 ms /     3 runs   (  100.75 ms per token,     9.93 tokens per second) | tid="1995896992" timestamp=1794381375 id_slot=0 id_task=4976 t_token_generation=302.245 n_decoded=3 t_token=100.74833333333333 n_tokens_second=9.925722509884366
+INFO [           print_timings]           total time =    6785.41 ms | tid="1995896992" timestamp=1794381375 id_slot=0 id_task=4976 t_prompt_processing=6483.161 t_token_generation=302.245 t_total=6785.406
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381375 remote_addr="127.0.0.1" remote_port=48206 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381375 id_slot=0 id_task=4976 n_ctx=512 n_past=79 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381375
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381375 id_slot=0 id_task=4980
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381375 id_slot=0 id_task=4980 p0=0
+INFO [           print_timings] prompt eval time     =    3955.58 ms /    47 tokens (   84.16 ms per token,    11.88 tokens per second) | tid="1995896992" timestamp=1794381379 id_slot=0 id_task=4980 t_prompt_processing=3955.583 n_prompt_tokens_processed=47 t_token=84.16134042553192 n_tokens_second=11.881940032607076
+INFO [           print_timings] generation eval time =     334.89 ms /     3 runs   (  111.63 ms per token,     8.96 tokens per second) | tid="1995896992" timestamp=1794381379 id_slot=0 id_task=4980 t_token_generation=334.892 n_decoded=3 t_token=111.63066666666667 n_tokens_second=8.95811186890102
+INFO [           print_timings]           total time =    4290.48 ms | tid="1995896992" timestamp=1794381379 id_slot=0 id_task=4980 t_prompt_processing=3955.583 t_token_generation=334.892 t_total=4290.475
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381379 id_slot=0 id_task=4980 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381379
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381379 remote_addr="127.0.0.1" remote_port=48208 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381379 id_slot=0 id_task=4984
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381379 id_slot=0 id_task=4984 p0=0
+INFO [           print_timings] prompt eval time     =    3514.14 ms /    42 tokens (   83.67 ms per token,    11.95 tokens per second) | tid="1995896992" timestamp=1794381383 id_slot=0 id_task=4984 t_prompt_processing=3514.145 n_prompt_tokens_processed=42 t_token=83.67011904761905 n_tokens_second=11.951698065959146
+INFO [           print_timings] generation eval time =     526.75 ms /     5 runs   (  105.35 ms per token,     9.49 tokens per second) | tid="1995896992" timestamp=1794381383 id_slot=0 id_task=4984 t_token_generation=526.746 n_decoded=5 t_token=105.3492 n_tokens_second=9.492241042172129
+INFO [           print_timings]           total time =    4040.89 ms | tid="1995896992" timestamp=1794381383 id_slot=0 id_task=4984 t_prompt_processing=3514.145 t_token_generation=526.746 t_total=4040.891
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381383 remote_addr="127.0.0.1" remote_port=48210 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381383 id_slot=0 id_task=4984 n_ctx=512 n_past=46 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381383
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381383 id_slot=0 id_task=4990
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381383 id_slot=0 id_task=4990 p0=0
+INFO [           print_timings] prompt eval time     =    6465.90 ms /    77 tokens (   83.97 ms per token,    11.91 tokens per second) | tid="1995896992" timestamp=1794381390 id_slot=0 id_task=4990 t_prompt_processing=6465.902 n_prompt_tokens_processed=77 t_token=83.97275324675324 n_tokens_second=11.908624659018956
+INFO [           print_timings] generation eval time =     347.50 ms /     3 runs   (  115.83 ms per token,     8.63 tokens per second) | tid="1995896992" timestamp=1794381390 id_slot=0 id_task=4990 t_token_generation=347.50100000000003 n_decoded=3 t_token=115.83366666666667 n_tokens_second=8.633068681816741
+INFO [           print_timings]           total time =    6813.40 ms | tid="1995896992" timestamp=1794381390 id_slot=0 id_task=4990 t_prompt_processing=6465.902 t_token_generation=347.50100000000003 t_total=6813.403
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381390 id_slot=0 id_task=4990 n_ctx=512 n_past=79 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381390
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381390 remote_addr="127.0.0.1" remote_port=48212 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381390 id_slot=0 id_task=4994
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381390 id_slot=0 id_task=4994 p0=0
+INFO [           print_timings] prompt eval time     =    3922.86 ms /    47 tokens (   83.47 ms per token,    11.98 tokens per second) | tid="1995896992" timestamp=1794381394 id_slot=0 id_task=4994 t_prompt_processing=3922.864 n_prompt_tokens_processed=47 t_token=83.4651914893617 n_tokens_second=11.981042422067143
+INFO [           print_timings] generation eval time =     340.61 ms /     3 runs   (  113.54 ms per token,     8.81 tokens per second) | tid="1995896992" timestamp=1794381394 id_slot=0 id_task=4994 t_token_generation=340.612 n_decoded=3 t_token=113.53733333333334 n_tokens_second=8.807675595692459
+INFO [           print_timings]           total time =    4263.48 ms | tid="1995896992" timestamp=1794381394 id_slot=0 id_task=4994 t_prompt_processing=3922.864 t_token_generation=340.612 t_total=4263.476
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381394 id_slot=0 id_task=4994 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381394
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381394 remote_addr="127.0.0.1" remote_port=48214 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381394 id_slot=0 id_task=4998
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381394 id_slot=0 id_task=4998 p0=0
+INFO [           print_timings] prompt eval time     =    3691.94 ms /    44 tokens (   83.91 ms per token,    11.92 tokens per second) | tid="1995896992" timestamp=1794381398 id_slot=0 id_task=4998 t_prompt_processing=3691.942 n_prompt_tokens_processed=44 t_token=83.90777272727273 n_tokens_second=11.917847030099606
+INFO [           print_timings] generation eval time =     283.63 ms /     3 runs   (   94.54 ms per token,    10.58 tokens per second) | tid="1995896992" timestamp=1794381398 id_slot=0 id_task=4998 t_token_generation=283.62600000000003 n_decoded=3 t_token=94.54200000000002 n_tokens_second=10.57730955554145
+INFO [           print_timings]           total time =    3975.57 ms | tid="1995896992" timestamp=1794381398 id_slot=0 id_task=4998 t_prompt_processing=3691.942 t_token_generation=283.62600000000003 t_total=3975.568
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381398 id_slot=0 id_task=4998 n_ctx=512 n_past=46 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381398
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381398 remote_addr="127.0.0.1" remote_port=48216 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381398 id_slot=0 id_task=5002
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381398 id_slot=0 id_task=5002 p0=0
+INFO [           print_timings] prompt eval time     =    6765.41 ms /    79 tokens (   85.64 ms per token,    11.68 tokens per second) | tid="1995896992" timestamp=1794381405 id_slot=0 id_task=5002 t_prompt_processing=6765.407 n_prompt_tokens_processed=79 t_token=85.63806329113925 n_tokens_second=11.677050619423193
+INFO [           print_timings] generation eval time =     290.09 ms /     3 runs   (   96.70 ms per token,    10.34 tokens per second) | tid="1995896992" timestamp=1794381405 id_slot=0 id_task=5002 t_token_generation=290.094 n_decoded=3 t_token=96.698 n_tokens_second=10.341475521727439
+INFO [           print_timings]           total time =    7055.50 ms | tid="1995896992" timestamp=1794381405 id_slot=0 id_task=5002 t_prompt_processing=6765.407 t_token_generation=290.094 t_total=7055.501
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381405 remote_addr="127.0.0.1" remote_port=48218 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381405 id_slot=0 id_task=5002 n_ctx=512 n_past=81 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381405
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381405 id_slot=0 id_task=5006
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381405 id_slot=0 id_task=5006 p0=0
+INFO [           print_timings] prompt eval time     =    3907.82 ms /    47 tokens (   83.15 ms per token,    12.03 tokens per second) | tid="1995896992" timestamp=1794381409 id_slot=0 id_task=5006 t_prompt_processing=3907.819 n_prompt_tokens_processed=47 t_token=83.14508510638298 n_tokens_second=12.027169119142927
+INFO [           print_timings] generation eval time =     285.09 ms /     3 runs   (   95.03 ms per token,    10.52 tokens per second) | tid="1995896992" timestamp=1794381409 id_slot=0 id_task=5006 t_token_generation=285.091 n_decoded=3 t_token=95.03033333333333 n_tokens_second=10.522955828139084
+INFO [           print_timings]           total time =    4192.91 ms | tid="1995896992" timestamp=1794381409 id_slot=0 id_task=5006 t_prompt_processing=3907.819 t_token_generation=285.091 t_total=4192.91
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381409 id_slot=0 id_task=5006 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381409
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381409 remote_addr="127.0.0.1" remote_port=48220 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381409 id_slot=0 id_task=5010
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381409 id_slot=0 id_task=5010 p0=0
+INFO [           print_timings] prompt eval time     =    3790.81 ms /    45 tokens (   84.24 ms per token,    11.87 tokens per second) | tid="1995896992" timestamp=1794381413 id_slot=0 id_task=5010 t_prompt_processing=3790.812 n_prompt_tokens_processed=45 t_token=84.24026666666667 n_tokens_second=11.87080762643993
+INFO [           print_timings] generation eval time =     320.32 ms /     3 runs   (  106.77 ms per token,     9.37 tokens per second) | tid="1995896992" timestamp=1794381413 id_slot=0 id_task=5010 t_token_generation=320.31600000000003 n_decoded=3 t_token=106.772 n_tokens_second=9.365751320570936
+INFO [           print_timings]           total time =    4111.13 ms | tid="1995896992" timestamp=1794381413 id_slot=0 id_task=5010 t_prompt_processing=3790.812 t_token_generation=320.31600000000003 t_total=4111.128
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381413 remote_addr="127.0.0.1" remote_port=48222 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381413 id_slot=0 id_task=5010 n_ctx=512 n_past=47 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381413
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381413 id_slot=0 id_task=5014
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381413 id_slot=0 id_task=5014 p0=0
+INFO [           print_timings] prompt eval time     =    6694.91 ms /    80 tokens (   83.69 ms per token,    11.95 tokens per second) | tid="1995896992" timestamp=1794381420 id_slot=0 id_task=5014 t_prompt_processing=6694.912 n_prompt_tokens_processed=80 t_token=83.6864 n_tokens_second=11.94937289691037
+INFO [           print_timings] generation eval time =     348.94 ms /     3 runs   (  116.31 ms per token,     8.60 tokens per second) | tid="1995896992" timestamp=1794381420 id_slot=0 id_task=5014 t_token_generation=348.94100000000003 n_decoded=3 t_token=116.31366666666668 n_tokens_second=8.597441974431208
+INFO [           print_timings]           total time =    7043.85 ms | tid="1995896992" timestamp=1794381420 id_slot=0 id_task=5014 t_prompt_processing=6694.912 t_token_generation=348.94100000000003 t_total=7043.853
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381420 id_slot=0 id_task=5014 n_ctx=512 n_past=82 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381420
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381420 remote_addr="127.0.0.1" remote_port=48224 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381420 id_slot=0 id_task=5018
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381420 id_slot=0 id_task=5018 p0=0
+INFO [           print_timings] prompt eval time     =    4005.89 ms /    47 tokens (   85.23 ms per token,    11.73 tokens per second) | tid="1995896992" timestamp=1794381425 id_slot=0 id_task=5018 t_prompt_processing=4005.886 n_prompt_tokens_processed=47 t_token=85.23161702127659 n_tokens_second=11.732735280035428
+INFO [           print_timings] generation eval time =     295.44 ms /     3 runs   (   98.48 ms per token,    10.15 tokens per second) | tid="1995896992" timestamp=1794381425 id_slot=0 id_task=5018 t_token_generation=295.445 n_decoded=3 t_token=98.48166666666667 n_tokens_second=10.154174211782227
+INFO [           print_timings]           total time =    4301.33 ms | tid="1995896992" timestamp=1794381425 id_slot=0 id_task=5018 t_prompt_processing=4005.886 t_token_generation=295.445 t_total=4301.331
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381425 id_slot=0 id_task=5018 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381425
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381425 remote_addr="127.0.0.1" remote_port=48226 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381425 id_slot=0 id_task=5022
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381425 id_slot=0 id_task=5022 p0=0
+INFO [           print_timings] prompt eval time     =    3703.39 ms /    44 tokens (   84.17 ms per token,    11.88 tokens per second) | tid="1995896992" timestamp=1794381429 id_slot=0 id_task=5022 t_prompt_processing=3703.387 n_prompt_tokens_processed=44 t_token=84.16788636363637 n_tokens_second=11.881015945673514
+INFO [           print_timings] generation eval time =     335.21 ms /     3 runs   (  111.74 ms per token,     8.95 tokens per second) | tid="1995896992" timestamp=1794381429 id_slot=0 id_task=5022 t_token_generation=335.209 n_decoded=3 t_token=111.73633333333333 n_tokens_second=8.949640373617653
+INFO [           print_timings]           total time =    4038.60 ms | tid="1995896992" timestamp=1794381429 id_slot=0 id_task=5022 t_prompt_processing=3703.387 t_token_generation=335.209 t_total=4038.596
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381429 id_slot=0 id_task=5022 n_ctx=512 n_past=46 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381429
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381429 remote_addr="127.0.0.1" remote_port=48228 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381429 id_slot=0 id_task=5026
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381429 id_slot=0 id_task=5026 p0=0
+INFO [           print_timings] prompt eval time     =    6356.34 ms /    76 tokens (   83.64 ms per token,    11.96 tokens per second) | tid="1995896992" timestamp=1794381435 id_slot=0 id_task=5026 t_prompt_processing=6356.343 n_prompt_tokens_processed=76 t_token=83.63609210526316 n_tokens_second=11.95656055691142
+INFO [           print_timings] generation eval time =     290.52 ms /     3 runs   (   96.84 ms per token,    10.33 tokens per second) | tid="1995896992" timestamp=1794381435 id_slot=0 id_task=5026 t_token_generation=290.523 n_decoded=3 t_token=96.84100000000001 n_tokens_second=10.3262048099462
+INFO [           print_timings]           total time =    6646.87 ms | tid="1995896992" timestamp=1794381435 id_slot=0 id_task=5026 t_prompt_processing=6356.343 t_token_generation=290.523 t_total=6646.866
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381435 id_slot=0 id_task=5026 n_ctx=512 n_past=78 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381435
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381435 remote_addr="127.0.0.1" remote_port=48230 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381435 id_slot=0 id_task=5030
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381435 id_slot=0 id_task=5030 p0=0
+INFO [           print_timings] prompt eval time     =    3810.58 ms /    47 tokens (   81.08 ms per token,    12.33 tokens per second) | tid="1995896992" timestamp=1794381440 id_slot=0 id_task=5030 t_prompt_processing=3810.581 n_prompt_tokens_processed=47 t_token=81.0761914893617 n_tokens_second=12.334077139417847
+INFO [           print_timings] generation eval time =     339.59 ms /     3 runs   (  113.20 ms per token,     8.83 tokens per second) | tid="1995896992" timestamp=1794381440 id_slot=0 id_task=5030 t_token_generation=339.59000000000003 n_decoded=3 t_token=113.19666666666667 n_tokens_second=8.83418239641921
+INFO [           print_timings]           total time =    4150.17 ms | tid="1995896992" timestamp=1794381440 id_slot=0 id_task=5030 t_prompt_processing=3810.581 t_token_generation=339.59000000000003 t_total=4150.171
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381440 id_slot=0 id_task=5030 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381440
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381440 remote_addr="127.0.0.1" remote_port=48232 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381440 id_slot=0 id_task=5034
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381440 id_slot=0 id_task=5034 p0=0
+INFO [           print_timings] prompt eval time     =    3670.32 ms /    44 tokens (   83.42 ms per token,    11.99 tokens per second) | tid="1995896992" timestamp=1794381444 id_slot=0 id_task=5034 t_prompt_processing=3670.315 n_prompt_tokens_processed=44 t_token=83.41625 n_tokens_second=11.988071868490852
+INFO [           print_timings] generation eval time =     288.87 ms /     3 runs   (   96.29 ms per token,    10.39 tokens per second) | tid="1995896992" timestamp=1794381444 id_slot=0 id_task=5034 t_token_generation=288.866 n_decoded=3 t_token=96.28866666666666 n_tokens_second=10.385438230875216
+INFO [           print_timings]           total time =    3959.18 ms | tid="1995896992" timestamp=1794381444 id_slot=0 id_task=5034 t_prompt_processing=3670.315 t_token_generation=288.866 t_total=3959.181
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381444 remote_addr="127.0.0.1" remote_port=48234 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381444 id_slot=0 id_task=5034 n_ctx=512 n_past=46 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381444
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381444 id_slot=0 id_task=5038
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381444 id_slot=0 id_task=5038 p0=0
+INFO [           print_timings] prompt eval time     =    6359.07 ms /    76 tokens (   83.67 ms per token,    11.95 tokens per second) | tid="1995896992" timestamp=1794381450 id_slot=0 id_task=5038 t_prompt_processing=6359.072 n_prompt_tokens_processed=76 t_token=83.672 n_tokens_second=11.951429390955157
+INFO [           print_timings] generation eval time =     328.49 ms /     3 runs   (  109.50 ms per token,     9.13 tokens per second) | tid="1995896992" timestamp=1794381450 id_slot=0 id_task=5038 t_token_generation=328.488 n_decoded=3 t_token=109.496 n_tokens_second=9.132753707898006
+INFO [           print_timings]           total time =    6687.56 ms | tid="1995896992" timestamp=1794381450 id_slot=0 id_task=5038 t_prompt_processing=6359.072 t_token_generation=328.488 t_total=6687.56
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381450 id_slot=0 id_task=5038 n_ctx=512 n_past=78 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381450
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381450 remote_addr="127.0.0.1" remote_port=48236 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381450 id_slot=0 id_task=5042
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381450 id_slot=0 id_task=5042 p0=0
+INFO [           print_timings] prompt eval time     =    3950.09 ms /    47 tokens (   84.04 ms per token,    11.90 tokens per second) | tid="1995896992" timestamp=1794381455 id_slot=0 id_task=5042 t_prompt_processing=3950.089 n_prompt_tokens_processed=47 t_token=84.04444680851064 n_tokens_second=11.898466085194537
+INFO [           print_timings] generation eval time =     326.89 ms /     3 runs   (  108.96 ms per token,     9.18 tokens per second) | tid="1995896992" timestamp=1794381455 id_slot=0 id_task=5042 t_token_generation=326.89 n_decoded=3 t_token=108.96333333333332 n_tokens_second=9.177399125087952
+INFO [           print_timings]           total time =    4276.98 ms | tid="1995896992" timestamp=1794381455 id_slot=0 id_task=5042 t_prompt_processing=3950.089 t_token_generation=326.89 t_total=4276.979
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381455 id_slot=0 id_task=5042 n_ctx=512 n_past=49 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381455
+INFO [      log_server_request] request | tid="1973412864" timestamp=1794381455 remote_addr="127.0.0.1" remote_port=48238 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381455 id_slot=0 id_task=5046
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381455 id_slot=0 id_task=5046 p0=0
+INFO [           print_timings] prompt eval time     =    3653.69 ms /    44 tokens (   83.04 ms per token,    12.04 tokens per second) | tid="1995896992" timestamp=1794381458 id_slot=0 id_task=5046 t_prompt_processing=3653.687 n_prompt_tokens_processed=44 t_token=83.0383409090909 n_tokens_second=12.04262981475972
+INFO [           print_timings] generation eval time =     289.71 ms /     3 runs   (   96.57 ms per token,    10.36 tokens per second) | tid="1995896992" timestamp=1794381458 id_slot=0 id_task=5046 t_token_generation=289.713 n_decoded=3 t_token=96.57100000000001 n_tokens_second=10.355075540276065
+INFO [           print_timings]           total time =    3943.40 ms | tid="1995896992" timestamp=1794381458 id_slot=0 id_task=5046 t_prompt_processing=3653.687 t_token_generation=289.713 t_total=3943.4
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381458 id_slot=0 id_task=5046 n_ctx=512 n_past=46 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381458
+INFO [      log_server_request] request | tid="1965020160" timestamp=1794381458 remote_addr="127.0.0.1" remote_port=48240 status=200 method="POST" path="/completion" params={}
+INFO [   launch_slot_with_task] slot is processing task | tid="1995896992" timestamp=1794381459 id_slot=0 id_task=5050
+INFO [            update_slots] kv cache rm [p0, end) | tid="1995896992" timestamp=1794381459 id_slot=0 id_task=5050 p0=0
+INFO [           print_timings] prompt eval time     =    6709.33 ms /    80 tokens (   83.87 ms per token,    11.92 tokens per second) | tid="1995896992" timestamp=1794381466 id_slot=0 id_task=5050 t_prompt_processing=6709.331 n_prompt_tokens_processed=80 t_token=83.8666375 n_tokens_second=11.923692541029798
+INFO [           print_timings] generation eval time =     383.84 ms /     3 runs   (  127.95 ms per token,     7.82 tokens per second) | tid="1995896992" timestamp=1794381466 id_slot=0 id_task=5050 t_token_generation=383.836 n_decoded=3 t_token=127.94533333333334 n_tokens_second=7.815838014151877
+INFO [           print_timings]           total time =    7093.17 ms | tid="1995896992" timestamp=1794381466 id_slot=0 id_task=5050 t_prompt_processing=6709.331 t_token_generation=383.836 t_total=7093.167
+INFO [      log_server_request] request | tid="1981805568" timestamp=1794381466 remote_addr="127.0.0.1" remote_port=48242 status=200 method="POST" path="/completion" params={}
+INFO [            update_slots] slot released | tid="1995896992" timestamp=1794381466 id_slot=0 id_task=5050 n_ctx=512 n_past=82 n_system_tokens=0 n_cache_tokens=0 truncated=false
+INFO [            update_slots] all slots are idle | tid="1995896992" timestamp=1794381466
