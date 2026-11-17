@@ -1,0 +1,100 @@
+{"category": "qa", "prompt": "Q: What is the capital of France?\nA:", "answer": "Paris", "id": 0}
+{"category": "qa", "prompt": "Q: What is the largest planet in the solar system?\nA:", "answer": "Jupiter", "id": 1}
+{"category": "qa", "prompt": "Q: Who wrote Romeo and Juliet?\nA:", "answer": "William Shakespeare", "id": 2}
+{"category": "qa", "prompt": "Q: What is the chemical symbol for gold?\nA:", "answer": "Au", "id": 3}
+{"category": "qa", "prompt": "Q: How many continents are there on Earth?\nA:", "answer": "7", "id": 4}
+{"category": "qa", "prompt": "Q: What gas do plants absorb from the air for photosynthesis?\nA:", "answer": "carbon dioxide", "id": 5}
+{"category": "qa", "prompt": "Q: What is the boiling point of water at sea level in degrees Celsius?\nA:", "answer": "100", "id": 6}
+{"category": "qa", "prompt": "Q: Which ocean is the largest?\nA:", "answer": "Pacific", "id": 7}
+{"category": "qa", "prompt": "Q: What is the square root of 81?\nA:", "answer": "9", "id": 8}
+{"category": "qa", "prompt": "Q: Who painted the Mona Lisa?\nA:", "answer": "Leonardo da Vinci", "id": 9}
+{"category": "qa", "prompt": "Q: What is the capital of Japan?\nA:", "answer": "Tokyo", "id": 10}
+{"category": "qa", "prompt": "Q: What is the hardest natural substance?\nA:", "answer": "diamond", "id": 11}
+{"category": "qa", "prompt": "Q: How many legs does a spider have?\nA:", "answer": "8", "id": 12}
+{"category": "qa", "prompt": "Q: What is the freezing point of water in degrees Fahrenheit?\nA:", "answer": "32", "id": 13}
+{"category": "qa", "prompt": "Q: Which planet is known as the Red Planet?\nA:", "answer": "Mars", "id": 14}
+{"category": "qa", "prompt": "Q: What is the longest river in Africa?\nA:", "answer": "Nile", "id": 15}
+{"category": "qa", "prompt": "Q: What language is primarily spoken in Brazil?\nA:", "answer": "Portuguese", "id": 16}
+{"category": "qa", "prompt": "Q: What is the smallest prime number?\nA:", "answer": "2", "id": 17}
+{"category": "qa", "prompt": "Q: Who developed the theory of general relativity?\nA:", "answer": "Albert Einstein", "id": 18}
+{"category": "qa", "prompt": "Q: What is the capital of Australia?\nA:", "answer": "Canberra", "id": 19}
+{"category": "qa", "prompt": "Q: What organ pumps blood through the human body?\nA:", "answer": "heart", "id": 20}
+{"category": "qa", "prompt": "Q: How many days are in a leap year?\nA:", "answer": "366", "id": 21}
+{"category": "qa", "prompt": "Q: What is H2O commonly called?\nA:", "answer": "water", "id": 22}
+{"category": "qa", "prompt": "Q: What is the capital of Canada?\nA:", "answer": "Ottawa", "id": 23}
+{"category": "qa", "prompt": "Q: What is the main language used to style web pages?\nA:", "answer": "CSS", "id": 24}
+{"category": "qa", "prompt": "Q: How many bits are in a byte?\nA:", "answer": "8", "id": 25}
+{"category": "qa", "prompt": "Q: What is the currency of the United Kingdom?\nA:", "answer": "pound sterling", "id": 26}
+{"category": "qa", "prompt": "Q: Which element has the atomic number 1?\nA:", "answer": "hydrogen", "id": 27}
+{"category": "qa", "prompt": "Q: What is the tallest mountain on Earth?\nA:", "answer": "Mount Everest", "id": 28}
+{"category": "qa", "prompt": "Q: Who was the first person to walk on the Moon?\nA:", "answer": "Neil Armstrong", "id": 29}
+{"category": "qa", "prompt": "Q: What is the capital of Italy?\nA:", "answer": "Rome", "id": 30}
+{"category": "qa", "prompt": "Q: What is the largest mammal?\nA:", "answer": "blue whale", "id": 31}
+{"category": "qa", "prompt": "Q: In computing, what does CPU stand for?\nA:", "answer": "central processing unit", "id": 32}
+{"category": "qa", "prompt": "Q: What is the capital of Germany?\nA:", "answer": "Berlin", "id": 33}
+{"category": "reasoning", "prompt": "Q: Hana has 5 pencils. Hana buys 3 more and then gives away 6. How many pencils does Hana have now?\nA: Let's think step by step.", "answer": "2", "id": 34}
+{"category": "reasoning", "prompt": "Q: A box holds 4 rows of 14 pencils. Ana has 3 full boxes. How many pencils is that in total?\nA: Let's think step by step.", "answer": "168", "id": 35}
+{"category": "reasoning", "prompt": "Q: Dara shares 28 apples equally among 2 friends. How many apples does each friend get?\nA: Let's think step by step.", "answer": "14", "id": 36}
+{"category": "reasoning", "prompt": "Q: Fatima has 34 shells. Fatima buys 4 more and then gives away 2. How many shells does Fatima have now?\nA: Let's think step by step.", "answer": "36", "id": 37}
+{"category": "reasoning", "prompt": "Q: A box holds 5 rows of 10 pencils. Chen has 2 full boxes. How many pencils is that in total?\nA: Let's think step by step.", "answer": "100", "id": 38}
+{"category": "reasoning", "prompt": "Q: Dara shares 18 pencils equally among 2 friends. How many pencils does each friend get?\nA: Let's think step by step.", "answer": "9", "id": 39}
+{"category": "reasoning", "prompt": "Q: Joy has 37 pencils. Joy buys 11 more and then gives away 2. How many pencils does Joy have now?\nA: Let's think step by step.", "answer": "46", "id": 40}
+{"category": "reasoning", "prompt": "Q: A box holds 4 rows of 9 pencils. Eli has 6 full boxes. How many pencils is that in total?\nA: Let's think step by step.", "answer": "216", "id": 41}
+{"category": "reasoning", "prompt": "Q: Eli shares 54 marbles equally among 6 friends. How many marbles does each friend get?\nA: Let's think step by step.", "answer": "9", "id": 42}
+{"category": "reasoning", "prompt": "Q: Ana has 5 pencils. Ana buys 7 more and then gives away 3. How many pencils does Ana have now?\nA: Let's think step by step.", "answer": "9", "id": 43}
+{"category": "reasoning", "prompt": "Q: A box holds 2 rows of 2 cards. Hana has 2 full boxes. How many cards is that in total?\nA: Let's think step by step.", "answer": "8", "id": 44}
+{"category": "reasoning", "prompt": "Q: Joy shares 18 shells equally among 6 friends. How many shells does each friend get?\nA: Let's think step by step.", "answer": "3", "id": 45}
+{"category": "reasoning", "prompt": "Q: Dara has 6 books. Dara buys 7 more and then gives away 2. How many books does Dara have now?\nA: Let's think step by step.", "answer": "11", "id": 46}
+{"category": "reasoning", "prompt": "Q: A box holds 2 rows of 9 books. Ivan has 6 full boxes. How many books is that in total?\nA: Let's think step by step.", "answer": "108", "id": 47}
+{"category": "reasoning", "prompt": "Q: Goran shares 16 stickers equally among 4 friends. How many stickers does each friend get?\nA: Let's think step by step.", "answer": "4", "id": 48}
+{"category": "reasoning", "prompt": "Q: Chen has 14 stickers. Chen buys 14 more and then gives away 5. How many stickers does Chen have now?\nA: Let's think step by step.", "answer": "23", "id": 49}
+{"category": "reasoning", "prompt": "Q: A box holds 4 rows of 9 cards. Ana has 4 full boxes. How many cards is that in total?\nA: Let's think step by step.", "answer": "144", "id": 50}
+{"category": "reasoning", "prompt": "Q: Joy shares 10 shells equally among 5 friends. How many shells does each friend get?\nA: Let's think step by step.", "answer": "2", "id": 51}
+{"category": "reasoning", "prompt": "Q: Joy has 33 books. Joy buys 13 more and then gives away 6. How many books does Joy have now?\nA: Let's think step by step.", "answer": "40", "id": 52}
+{"category": "reasoning", "prompt": "Q: A box holds 3 rows of 3 stickers. Hana has 4 full boxes. How many stickers is that in total?\nA: Let's think step by step.", "answer": "36", "id": 53}
+{"category": "reasoning", "prompt": "Q: Goran shares 20 cards equally among 2 friends. How many cards does each friend get?\nA: Let's think step by step.", "answer": "10", "id": 54}
+{"category": "reasoning", "prompt": "Q: Hana has 21 cards. Hana buys 12 more and then gives away 3. How many cards does Hana have now?\nA: Let's think step by step.", "answer": "30", "id": 55}
+{"category": "reasoning", "prompt": "Q: A box holds 4 rows of 11 pencils. Fatima has 2 full boxes. How many pencils is that in total?\nA: Let's think step by step.", "answer": "88", "id": 56}
+{"category": "reasoning", "prompt": "Q: Chen shares 26 coins equally among 2 friends. How many coins does each friend get?\nA: Let's think step by step.", "answer": "13", "id": 57}
+{"category": "reasoning", "prompt": "Q: Ben has 18 cards. Ben buys 2 more and then gives away 4. How many cards does Ben have now?\nA: Let's think step by step.", "answer": "16", "id": 58}
+{"category": "reasoning", "prompt": "Q: A box holds 2 rows of 15 marbles. Ana has 4 full boxes. How many marbles is that in total?\nA: Let's think step by step.", "answer": "120", "id": 59}
+{"category": "reasoning", "prompt": "Q: Fatima shares 18 stickers equally among 6 friends. How many stickers does each friend get?\nA: Let's think step by step.", "answer": "3", "id": 60}
+{"category": "reasoning", "prompt": "Q: Eli has 32 pencils. Eli buys 5 more and then gives away 2. How many pencils does Eli have now?\nA: Let's think step by step.", "answer": "35", "id": 61}
+{"category": "reasoning", "prompt": "Q: A box holds 3 rows of 10 marbles. Goran has 6 full boxes. How many marbles is that in total?\nA: Let's think step by step.", "answer": "180", "id": 62}
+{"category": "reasoning", "prompt": "Q: Fatima shares 65 marbles equally among 5 friends. How many marbles does each friend get?\nA: Let's think step by step.", "answer": "13", "id": 63}
+{"category": "reasoning", "prompt": "Q: Chen has 24 marbles. Chen buys 2 more and then gives away 4. How many marbles does Chen have now?\nA: Let's think step by step.", "answer": "22", "id": 64}
+{"category": "reasoning", "prompt": "Q: A box holds 6 rows of 14 books. Ivan has 3 full boxes. How many books is that in total?\nA: Let's think step by step.", "answer": "252", "id": 65}
+{"category": "reasoning", "prompt": "Q: Hana shares 8 coins equally among 2 friends. How many coins does each friend get?\nA: Let's think step by step.", "answer": "4", "id": 66}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: light\nAntonym: dark\n\nWord: happy\nAntonym: sad\n\nWord: early\nAntonym: late\n\nWord: hot\nAntonym: cold\n\nWord: full\nAntonym:", "answer": "empty", "id": 67}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Chile\nCapital: Santiago\n\nCountry: Greece\nCapital: Athens\n\nCountry: Norway\nCapital: Oslo\n\nCountry: Cuba\nCapital: Havana\n\nCountry: Thailand\nCapital:", "answer": "Bangkok", "id": 68}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: The hotel room was clean and cozy.\nSentiment: positive\n\nReview: I loved this movie, it was wonderful.\nSentiment: positive\n\nReview: I want my money back.\nSentiment: negative\n\nReview: The food was cold and tasteless.\nSentiment: negative\n\nReview: This phone breaks every week.\nSentiment:", "answer": "negative", "id": 69}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: strong\nAntonym: weak\n\nWord: up\nAntonym: down\n\nWord: open\nAntonym: closed\n\nWord: fast\nAntonym: slow\n\nWord: happy\nAntonym:", "answer": "sad", "id": 70}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Kenya\nCapital: Nairobi\n\nCountry: Norway\nCapital: Oslo\n\nCountry: Poland\nCapital: Warsaw\n\nCountry: Chile\nCapital: Santiago\n\nCountry: Egypt\nCapital:", "answer": "Cairo", "id": 71}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: An absolute joy to read.\nSentiment: positive\n\nReview: This phone breaks every week.\nSentiment: negative\n\nReview: Terrible, would not recommend.\nSentiment: negative\n\nReview: I want my money back.\nSentiment: negative\n\nReview: Best purchase I have made all year.\nSentiment:", "answer": "positive", "id": 72}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: up\nAntonym: down\n\nWord: happy\nAntonym: sad\n\nWord: hot\nAntonym: cold\n\nWord: open\nAntonym: closed\n\nWord: rich\nAntonym:", "answer": "poor", "id": 73}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Kenya\nCapital: Nairobi\n\nCountry: Egypt\nCapital: Cairo\n\nCountry: Norway\nCapital: Oslo\n\nCountry: Cuba\nCapital: Havana\n\nCountry: Peru\nCapital:", "answer": "Lima", "id": 74}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: I loved this movie, it was wonderful.\nSentiment: positive\n\nReview: The service was slow and rude.\nSentiment: negative\n\nReview: An absolute joy to read.\nSentiment: positive\n\nReview: The hotel room was clean and cozy.\nSentiment: positive\n\nReview: I want my money back.\nSentiment:", "answer": "negative", "id": 75}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: early\nAntonym: late\n\nWord: fast\nAntonym: slow\n\nWord: strong\nAntonym: weak\n\nWord: up\nAntonym: down\n\nWord: open\nAntonym:", "answer": "closed", "id": 76}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Cuba\nCapital: Havana\n\nCountry: Peru\nCapital: Lima\n\nCountry: Spain\nCapital: Madrid\n\nCountry: Thailand\nCapital: Bangkok\n\nCountry: Kenya\nCapital:", "answer": "Nairobi", "id": 77}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: This phone breaks every week.\nSentiment: negative\n\nReview: What a fantastic concert!\nSentiment: positive\n\nReview: The service was slow and rude.\nSentiment: negative\n\nReview: Best purchase I have made all year.\nSentiment: positive\n\nReview: Terrible, would not recommend.\nSentiment:", "answer": "negative", "id": 78}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: fast\nAntonym: slow\n\nWord: hot\nAntonym: cold\n\nWord: wet\nAntonym: dry\n\nWord: young\nAntonym: old\n\nWord: full\nAntonym:", "answer": "empty", "id": 79}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Norway\nCapital: Oslo\n\nCountry: Cuba\nCapital: Havana\n\nCountry: Kenya\nCapital: Nairobi\n\nCountry: Vietnam\nCapital: Hanoi\n\nCountry: Poland\nCapital:", "answer": "Warsaw", "id": 80}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: Terrible, would not recommend.\nSentiment: negative\n\nReview: I loved this movie, it was wonderful.\nSentiment: positive\n\nReview: The hotel room was clean and cozy.\nSentiment: positive\n\nReview: This phone breaks every week.\nSentiment: negative\n\nReview: What a fantastic concert!\nSentiment:", "answer": "positive", "id": 81}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: light\nAntonym: dark\n\nWord: up\nAntonym: down\n\nWord: happy\nAntonym: sad\n\nWord: open\nAntonym: closed\n\nWord: early\nAntonym:", "answer": "late", "id": 82}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Cuba\nCapital: Havana\n\nCountry: Chile\nCapital: Santiago\n\nCountry: Peru\nCapital: Lima\n\nCountry: Kenya\nCapital: Nairobi\n\nCountry: Vietnam\nCapital:", "answer": "Hanoi", "id": 83}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: What a fantastic concert!\nSentiment: positive\n\nReview: I want my money back.\nSentiment: negative\n\nReview: The food was cold and tasteless.\nSentiment: negative\n\nReview: Best purchase I have made all year.\nSentiment: positive\n\nReview: The hotel room was clean and cozy.\nSentiment:", "answer": "positive", "id": 84}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: early\nAntonym: late\n\nWord: rich\nAntonym: poor\n\nWord: strong\nAntonym: weak\n\nWord: up\nAntonym: down\n\nWord: young\nAntonym:", "answer": "old", "id": 85}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Ireland\nCapital: Dublin\n\nCountry: Greece\nCapital: Athens\n\nCountry: Vietnam\nCapital: Hanoi\n\nCountry: Spain\nCapital: Madrid\n\nCountry: Chile\nCapital:", "answer": "Santiago", "id": 86}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: This phone breaks every week.\nSentiment: negative\n\nReview: I loved this movie, it was wonderful.\nSentiment: positive\n\nReview: An absolute joy to read.\nSentiment: positive\n\nReview: The food was cold and tasteless.\nSentiment: negative\n\nReview: Best purchase I have made all year.\nSentiment:", "answer": "positive", "id": 87}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: wet\nAntonym: dry\n\nWord: full\nAntonym: empty\n\nWord: happy\nAntonym: sad\n\nWord: fast\nAntonym: slow\n\nWord: rich\nAntonym:", "answer": "poor", "id": 88}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Thailand\nCapital: Bangkok\n\nCountry: Chile\nCapital: Santiago\n\nCountry: Poland\nCapital: Warsaw\n\nCountry: Vietnam\nCapital: Hanoi\n\nCountry: Spain\nCapital:", "answer": "Madrid", "id": 89}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: I loved this movie, it was wonderful.\nSentiment: positive\n\nReview: The food was cold and tasteless.\nSentiment: negative\n\nReview: The hotel room was clean and cozy.\nSentiment: positive\n\nReview: The service was slow and rude.\nSentiment: negative\n\nReview: An absolute joy to read.\nSentiment:", "answer": "positive", "id": 90}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: happy\nAntonym: sad\n\nWord: up\nAntonym: down\n\nWord: light\nAntonym: dark\n\nWord: hot\nAntonym: cold\n\nWord: fast\nAntonym:", "answer": "slow", "id": 91}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Ireland\nCapital: Dublin\n\nCountry: Vietnam\nCapital: Hanoi\n\nCountry: Peru\nCapital: Lima\n\nCountry: Cuba\nCapital: Havana\n\nCountry: Greece\nCapital:", "answer": "Athens", "id": 92}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: The service was slow and rude.\nSentiment: negative\n\nReview: I loved this movie, it was wonderful.\nSentiment: positive\n\nReview: Terrible, would not recommend.\nSentiment: negative\n\nReview: This phone breaks every week.\nSentiment: negative\n\nReview: What a fantastic concert!\nSentiment:", "answer": "positive", "id": 93}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: up\nAntonym: down\n\nWord: fast\nAntonym: slow\n\nWord: strong\nAntonym: weak\n\nWord: happy\nAntonym: sad\n\nWord: early\nAntonym:", "answer": "late", "id": 94}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Norway\nCapital: Oslo\n\nCountry: Vietnam\nCapital: Hanoi\n\nCountry: Spain\nCapital: Madrid\n\nCountry: Poland\nCapital: Warsaw\n\nCountry: Egypt\nCapital:", "answer": "Cairo", "id": 95}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: The hotel room was clean and cozy.\nSentiment: positive\n\nReview: What a fantastic concert!\nSentiment: positive\n\nReview: An absolute joy to read.\nSentiment: positive\n\nReview: The service was slow and rude.\nSentiment: negative\n\nReview: Best purchase I have made all year.\nSentiment:", "answer": "positive", "id": 96}
+{"category": "fewshot", "task": "antonym", "prompt": "Word: open\nAntonym: closed\n\nWord: up\nAntonym: down\n\nWord: full\nAntonym: empty\n\nWord: wet\nAntonym: dry\n\nWord: strong\nAntonym:", "answer": "weak", "id": 97}
+{"category": "fewshot", "task": "country_capital", "prompt": "Country: Spain\nCapital: Madrid\n\nCountry: Egypt\nCapital: Cairo\n\nCountry: Vietnam\nCapital: Hanoi\n\nCountry: Cuba\nCapital: Havana\n\nCountry: Greece\nCapital:", "answer": "Athens", "id": 98}
+{"category": "fewshot", "task": "sentiment", "prompt": "Review: An absolute joy to read.\nSentiment: positive\n\nReview: The food was cold and tasteless.\nSentiment: negative\n\nReview: I loved this movie, it was wonderful.\nSentiment: positive\n\nReview: Best purchase I have made all year.\nSentiment: positive\n\nReview: The service was slow and rude.\nSentiment:", "answer": "negative", "id": 99}
